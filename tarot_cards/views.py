@@ -1,20 +1,15 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
+from common.views import TitleMixin
 
-class IndexView(TemplateView):
+
+class IndexView(TitleMixin, TemplateView):
     template_name = 'tarot_cards/index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data()
-        context['title'] = 'Гадания онлайн'
-        return context
+    title = 'Гадания онлайн'
 
 
-class TarotSuitsView(TemplateView):
+class TarotSuitsView(TitleMixin, TemplateView):
     template_name = 'tarot_cards/tarot_suits.html'
+    title = 'Масти таро'
 
-    def get_context_data(self, **kwargs):
-        context = super(TarotSuitsView, self).get_context_data()
-        context['title'] = 'Масти таро'
-        return context
