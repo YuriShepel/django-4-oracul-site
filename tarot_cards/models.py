@@ -1,3 +1,66 @@
 from django.db import models
 
-# Create your models here.
+
+class TarotSuits(models.Model):
+    suits_name = models.CharField(max_length=100, unique=True)
+    description = models.TextField(null=True, blank=True)
+    seo_tags = models.CharField(max_length=100, unique=True, null=True, blank=True)
+    image_1 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
+    image_2 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
+    image_3 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
+    image_4 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
+    url = models.SlugField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.suits_name
+
+    class Meta:
+        verbose_name = 'Масть таро'
+        verbose_name_plural = 'Масти таро'
+
+
+class Card(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    image_1 = models.ImageField(upload_to='tarot_cards/cards_images', blank=True)
+
+    general_up_tags = models.TextField(null=True, blank=True)
+    general_down_tags = models.TextField(null=True, blank=True)
+    general_meaning  = models.TextField(null=True, blank=True)
+    general_up = models.TextField(null=True, blank=True)
+    general_down = models.TextField(null=True, blank=True)
+
+    love_up_tags = models.TextField(null=True, blank=True)
+    love_down_tags = models.TextField(null=True, blank=True)
+    love_up = models.TextField(null=True, blank=True)
+    love_down = models.TextField(null=True, blank=True)
+
+    сareer_up_tags = models.TextField(null=True, blank=True)
+    сareer_down_tags = models.TextField(null=True, blank=True)
+    сareer_up = models.TextField(null=True, blank=True)
+    сareer_down = models.TextField(null=True, blank=True)
+
+    finance_up_tags = models.TextField(null=True, blank=True)
+    finance_down_tags = models.TextField(null=True, blank=True)
+    finance_up = models.TextField(null=True, blank=True)
+    finance_down = models.TextField(null=True, blank=True)
+
+    past_meaning = models.TextField(null=True, blank=True)
+    present_meaning = models.TextField(null=True, blank=True)
+    future_meaning = models.TextField(null=True, blank=True)
+
+    card_of_day = models.TextField(null=True, blank=True)
+    card_advice = models.TextField(null=True, blank=True)
+
+    yes_no = models.CharField(max_length=100, null=True, blank=True)
+
+    card_suit = models.ForeignKey(to=TarotSuits, on_delete=models.CASCADE)
+
+    url = models.SlugField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Карта'
+        verbose_name_plural = 'Карты'
+

@@ -1,0 +1,33 @@
+{% load suits_tag %}
+
+<div class="left-navbar col-lg-2 col-md-12">
+    <a href="#">
+        <h4 class="d-flex align-items-center">Онлайн гадания</h4>
+    </a>
+    <nav class="menu">
+        <ul>
+            <li>
+                <a href="#">Карта дня</a>
+            </li>
+            <li>
+                <a href="#">Гадание на ситуацию</a>
+            </li>
+            <li>
+                <a href="#">Да или нет</a>
+            </li>
+        </ul>
+    </nav>
+    <a href="{% url 'tarot_cards:tarot_suits' %}">
+        <h4 class="d-flex align-items-center">Справочник таро</h4>
+    </a>
+    <nav class="menu">
+        <ul>
+            {% get_suits as suits %}
+            {% for suit in suits %}
+                <li>
+                <a href="/tarot_suits/{{ suit.url }}"> {{ suit.suits_name }} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>

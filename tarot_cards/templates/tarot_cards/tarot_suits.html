@@ -25,7 +25,7 @@
                   <div class="card-image">
                     <a href="#">
                       <img
-                        src=" {% static 'images/tarot_img/major_arcana/sun.png' %}"
+                        src=" {{ major.image_4.url }} "
                         class="card-img-top mx-auto d-block text-center"
                         alt="Major Arcana"
                       />
@@ -33,12 +33,14 @@
                   </div>
                   <div class="card-body">
                     <a href="#" class="btn btn-primary card-button"
-                      >К старшим арканам</a
+                      >{{ major.suits_name }}</a
                     >
                   </div>
                 </div>
               </div>
             </div>
+
+
 
             <div class="row minor-arcana-row justify-content-center">
               <div
@@ -48,7 +50,7 @@
                   <div class="card-image">
                     <a href="#">
                       <img
-                        src="{% static 'images/tarot_img/pentacles/ace_pentacles.png' %}"
+                        src="{{ pentacles.image_4.url }}"
                         class="card-img-top"
                         alt="Pentacles"
                       />
@@ -56,7 +58,7 @@
                   </div>
                   <div class="card-body">
                     <a href="#" class="btn btn-primary card-button"
-                      >К Пентаклям</a
+                      >{{ pentacles.suits_name }}</a
                     >
                   </div>
                 </div>
@@ -68,13 +70,13 @@
                   <div class="card-image">
                     <a href="#"
                       ><img
-                        src="{% static 'images/tarot_img/wands/ace_wands.png' %}"
+                        src="{{ wands.image_4.url }}"
                         class="card-img-top"
                         alt="Wands"
                     /></a>
                   </div>
                   <div class="card-body">
-                    <a href="#" class="btn btn-primary card-button">К Жезлам</a>
+                    <a href="#" class="btn btn-primary card-button">{{ wands.suits_name }}</a>
                   </div>
                 </div>
               </div>
@@ -85,16 +87,16 @@
                   <div class="card-image">
                     <a href="#"
                       ><img
-                        src="{% static 'images/tarot_img/cups/ace_cups.png' %}"
+                        src="{{ cups.image_4.url }}"
                         class="card-img-top"
                         alt="Cups"
                     /></a>
                   </div>
                   <div class="card-body">
                     <a
-                      href="tarot_list.html"
+                      href="{{ cups.url }}"
                       class="btn btn-primary card-button"
-                      >К Кубкам</a
+                      >{{ cups.suits_name }}</a
                     >
                   </div>
                 </div>
@@ -106,14 +108,14 @@
                   <div class="card-image">
                     <a href="#">
                       <img
-                        src="{% static 'images/tarot_img/swords/ace_swords.png' %}"
+                        src="{{ swords.image_4.url }}"
                         class="card-img-top"
                         alt="Swords"
                       />
                     </a>
                   </div>
                   <div class="card-body">
-                    <a href="#" class="btn btn-primary card-button">К Мечам</a>
+                    <a href="#" class="btn btn-primary card-button">{{ swords.suits_name }}</a>
                   </div>
                 </div>
               </div>

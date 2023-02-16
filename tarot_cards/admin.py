@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import TarotSuits, Card
+
+admin.site.register(TarotSuits)
+admin.site.register(Card)

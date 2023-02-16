@@ -1,0 +1,86 @@
+{% extends 'tarot_cards/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description" content="{{ suit.description }}"/>
+    <meta
+            name="keywords"
+            content="{{ suit.seo_tags }}"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="image-block">
+                    <a href="#">
+                        <img
+                                class="title-image"
+                                src="{{ image.url }}"
+                                class="rounded"
+                                alt="..."
+                        />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2 mt-2 justify-content-center">
+            <div class="col-4 suits-info-text">
+                <div class="text-center mb-4 mt-4">
+                    <a href="cups_description.html">
+                        <p>Узнать подробную информацию о масти</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+            <div class="row minor-arcana-row justify-content-center">
+                        {% for card in cards %}
+                <div
+                        class="col-lg-2 col-md-6 mt-4 justify-content-center minor-arcana"
+                >
+                    <div class="card mb-3 text-center minor-arcana-card">
+                        <div class="card-image">
+                            <a href="#">
+                                <img
+                                        src={{ card.image_1.url }}
+                                        class="card-img-top"
+                                        alt="{{ card.name }}"
+                                />
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary card-button">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                        {% endfor %}
+            </div>
+
+
+
+        <div class="row justify-content-center">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src=" {% static 'images/girl_whith-card.jpg' %}"
+                            alt="Girl with Tarot Card"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
