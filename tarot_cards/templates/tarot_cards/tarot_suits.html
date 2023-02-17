@@ -1,134 +1,88 @@
 {% extends 'tarot_cards/base.html' %}
 {% load static %}
 
+{% block seo %}
+    <meta name="description"
+          content="Справочник таро - это источник информации для всех, кто интересуется таро. На нашей странице вы найдете детальные описания каждой карты таро, ее значение и символику. Исследуйте мир таро и расширьте свои знания с помощью нашего справочника.}"/>
+    <meta
+            name="keywords"
+            content="Таро, Колода таро, Описание карт, Символика таро, Гадание таро, Значение карт, Тайны таро, Справочник таро, Обучение таро"/>
+{% endblock %}
+
 {% block title %}
-        <title>{{ title }}</title>
+    <title>{{ title }}</title>
 {% endblock %}
 
 {% block content %}
-           <!-- central content block -->
-          <div class="content-block col-lg-8 col-md-12">
-            <div class="row proposition-text">
-              <div class="col">
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row proposition-text">
+            <div class="col">
                 <div class="text-center mb-4">
-                  <p>
-                    Выберите масть аркана, о котором вы хотите получить
-                    информацию
-                  </p>
+                    <p>
+                        Выберите масть аркана, о котором вы хотите получить
+                        информацию
+                    </p>
                 </div>
-              </div>
             </div>
+        </div>
 
-            <div class="row major-arcana-row justify-content-center">
-              <div class="col-4 justify-content-center major-arcana">
+        <div class="row major-arcana-row justify-content-center">
+            <div class="col-4 justify-content-center major-arcana">
                 <div class="card text-center mb-3">
-                  <div class="card-image">
-                    <a href="#">
-                      <img
-                        src=" {{ major.image_4.url }} "
-                        class="card-img-top mx-auto d-block text-center"
-                        alt="Major Arcana"
-                      />
-                    </a>
-                  </div>
-                  <div class="card-body">
-                    <a href="#" class="btn btn-primary card-button"
-                      >{{ major.suits_name }}</a
-                    >
-                  </div>
+                    <div class="card-image">
+                        <a href="{{ major_arcana.url }}">
+                            <img
+                                    src=" {{ major_arcana.image_4.url }} "
+                                    class="card-img-top mx-auto d-block text-center"
+                                    alt="Major Arcana"
+                            />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{{ major_arcana.url }}" class="btn btn-primary card-button"
+                        >{{ major_arcana.suits_name }}</a
+                        >
+                    </div>
                 </div>
-              </div>
             </div>
+        </div>
 
+        <div class="row minor-arcana-row justify-content-center">
+            {% for suit in minor_arcana %}
+                <div
+                        class="col-lg-3 col-md-6 mt-4 justify-content-center text-center minor-arcana"
+                >
+                    <div class="card mb-3 minor-arcana-card">
+                        <div class="card-image">
+                            <a href="{{ suit.url }}"
+                            ><img
+                                    src="{{ suit.image_4.url }}"
+                                    class="card-img-top"
+                                    alt="Cups"
+                            /></a>
+                        </div>
+                        <div class="card-body">
+                            <a
+                                    href="{{ suit.url }}"
+                                    class="btn btn-primary card-button"
+                            >{{ suit.suits_name }}</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
 
-
-            <div class="row minor-arcana-row justify-content-center">
-              <div
-                class="col-lg-3 col-md-6 mt-4 justify-content-center minor-arcana"
-              >
-                <div class="card mb-3 text-center minor-arcana-card">
-                  <div class="card-image">
-                    <a href="#">
-                      <img
-                        src="{{ pentacles.image_4.url }}"
-                        class="card-img-top"
-                        alt="Pentacles"
-                      />
-                    </a>
-                  </div>
-                  <div class="card-body">
-                    <a href="#" class="btn btn-primary card-button"
-                      >{{ pentacles.suits_name }}</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-lg-3 col-md-6 mt-4 justify-content-center minor-arcana"
-              >
-                <div class="card mb-3 text-center minor-arcana-card">
-                  <div class="card-image">
-                    <a href="#"
-                      ><img
-                        src="{{ wands.image_4.url }}"
-                        class="card-img-top"
-                        alt="Wands"
-                    /></a>
-                  </div>
-                  <div class="card-body">
-                    <a href="#" class="btn btn-primary card-button">{{ wands.suits_name }}</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-lg-3 col-md-6 mt-4 justify-content-center text-center minor-arcana"
-              >
-                <div class="card mb-3 minor-arcana-card">
-                  <div class="card-image">
-                    <a href="#"
-                      ><img
-                        src="{{ cups.image_4.url }}"
-                        class="card-img-top"
-                        alt="Cups"
-                    /></a>
-                  </div>
-                  <div class="card-body">
-                    <a
-                      href="{{ cups.url }}"
-                      class="btn btn-primary card-button"
-                      >{{ cups.suits_name }}</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col-lg-3 col-md-6 mt-4 justify-content-center text-center minor-arcana"
-              >
-                <div class="card mb-3 minor-arcana-card">
-                  <div class="card-image">
-                    <a href="#">
-                      <img
-                        src="{{ swords.image_4.url }}"
-                        class="card-img-top"
-                        alt="Swords"
-                      />
-                    </a>
-                  </div>
-                  <div class="card-body">
-                    <a href="#" class="btn btn-primary card-button">{{ swords.suits_name }}</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-4 pt-3 pb-3">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4 pt-3 pb-3">
                 <div class="image-block">
-                  <img
-                    src="{% static 'images/d_d_tarot_guide_comp_w_760px.jpg' %}"
-                    alt="Джонни Депп с картой"
-                  />
+                    <img
+                            src="{% static 'images/d_d_tarot_guide_comp_w_760px.jpg' %}"
+                            alt="Джонни Депп с картой"
+                    />
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
 {% endblock %}

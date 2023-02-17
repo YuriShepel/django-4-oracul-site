@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block seo %}
-    <meta name="description" content="{{ suit.description }}"/>
+    <meta name="description" content="{{ suit.seo_description }}"/>
     <meta
             name="keywords"
             content="{{ suit.seo_tags }}"/>
 {% endblock %}
 
 {% block title %}
-    <title>{{ title }}</title>
+    <title>{{ suit.suits_name }}</title>
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
                     <a href="#">
                         <img
                                 class="title-image"
-                                src="{{ image.url }}"
+                                src="{{ suit.image_1.url }}"
                                 class="rounded"
                                 alt="..."
                         />
@@ -33,15 +33,22 @@
         <div class="row mb-2 mt-2 justify-content-center">
             <div class="col-4 suits-info-text">
                 <div class="text-center mb-4 mt-4">
-                    <a href="cups_description.html">
+                    <a href="{% url 'tarot_cards:tarot_suits'%}">
+                        <p>Вернуться к мастям</p>
+                    </a>
+                </div>
+            </div>
+                        <div class="col-4 suits-info-text">
+                <div class="text-center mb-4 mt-4">
+                    <a href="{% url 'tarot_cards:suit_description' suit.url %}">
                         <p>Узнать подробную информацию о масти</p>
                     </a>
                 </div>
             </div>
         </div>
 
-            <div class="row minor-arcana-row justify-content-center">
-                        {% for card in cards %}
+        <div class="row minor-arcana-row justify-content-center">
+            {% for card in cards %}
                 <div
                         class="col-lg-2 col-md-6 mt-4 justify-content-center minor-arcana"
                 >
@@ -50,26 +57,24 @@
                             <a href="#">
                                 <img
                                         src={{ card.image_1.url }}
-                                        class="card-img-top"
+                                                class="card-img-top"
                                         alt="{{ card.name }}"
                                 />
                             </a>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn-primary card-button">Подробнее</a>
+                            <a href="#" class="btn btn-primary card-button">{{ card.name }}</a>
                         </div>
                     </div>
                 </div>
-                        {% endfor %}
-            </div>
-
-
+            {% endfor %}
+        </div>
 
         <div class="row justify-content-center">
-            <div class="col-4 pt-3 pb-3">
-                <div class="image-block">
+            <div class="col-4 pt-3 pb-3 justify-content-center">
+                <div class="image-block text-center">
                     <img
-                            src=" {% static 'images/girl_whith-card.jpg' %}"
+                            src=" {{ suit.image_3.url }}"
                             alt="Girl with Tarot Card"
                     />
                 </div>

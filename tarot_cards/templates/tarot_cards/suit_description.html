@@ -1,0 +1,106 @@
+{% extends 'tarot_cards/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description" content="{{ suit.description }}"/>
+    <meta
+            name="keywords"
+            content="{{ suit.seo_tags }}"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ suit.suits_name }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="image-block text-center">
+                    <a href="{% url 'tarot_cards:cards_list' suit.url %}">
+                        <img
+                                class="title-image"
+                                src="{{ suit.image_2.url }}"
+                                class="rounded"
+                                alt="{{ suit.suits_name }}"
+                        />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2 mt-2 justify-content-center">
+            <div class="col-4 suits-info-text">
+                <div class="text-center mb-4 mt-4">
+                    <a href="{% url 'tarot_cards:cards_list' suit.url %}">
+                        <p>{{ suit.suits_name }}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-information">
+            <div class="col mt-4 justify-content-center">
+                <p>
+                    {{ suit.description }}
+                </p>
+                <h2 class="article-title">Сильные стороны мастей таро {{ suit.suits_name }}</h2>
+                <p>
+                    {{ suit.positive_description }}
+                </p>
+                <h2 class="article-title">Слабые стороны мастей таро {{ suit.suits_name }}</h2>
+                <p>
+                    {{ suit.negative_description }}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="table mt-3 mb-3">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Определение</th>
+                        <th scope="col">Соответствие</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Масть</td>
+                        <td>{{ suit.suits_name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Ключевые слова</td>
+                        <td>{{ suit.keywords }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Астрологические знаки</td>
+                        <td>{{ suit.astrological_signs }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Альтернативные названия</td>
+                        <td>{{ suit.alternative_names }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row justify-content-center bottom-image">
+            <div class="col-4 pb-1 pt-1">
+                <div class="image-block text-center">
+                    <img
+                            src="{{ suit.image_3.url }}"
+                            alt="{{ suit.suits_name }}"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -25,7 +25,7 @@
             {% get_suits as suits %}
             {% for suit in suits %}
                 <li>
-                <a href="/tarot_suits/{{ suit.url }}"> {{ suit.suits_name }} </a>
+                <a href="{% url 'tarot_cards:cards_list' suit.url %} "> {{ suit.suits_name }} </a>
                 </li>
             {% endfor %}
         </ul>
