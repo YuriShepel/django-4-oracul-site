@@ -20,12 +20,12 @@ class TarotSuits(models.Model):
 
     url = models.SlugField(max_length=100, unique=True)
 
-    def __str__(self):
-        return self.suits_name
-
     class Meta:
         verbose_name = 'Масть таро'
         verbose_name_plural = 'Масти таро'
+
+    def __str__(self):
+        return self.suits_name
 
 
 class Card(models.Model):
@@ -34,7 +34,7 @@ class Card(models.Model):
 
     general_up_tags = models.TextField(null=True, blank=True)
     general_down_tags = models.TextField(null=True, blank=True)
-    general_meaning  = models.TextField(null=True, blank=True)
+    general_meaning = models.TextField(null=True, blank=True)
     general_up = models.TextField(null=True, blank=True)
     general_down = models.TextField(null=True, blank=True)
 
@@ -69,10 +69,9 @@ class Card(models.Model):
 
     url = models.SlugField(max_length=100, unique=True)
 
-    def __str__(self):
-        return f'{self.name} ------- {self.card_suit}'
-
     class Meta:
         verbose_name = 'Карта'
         verbose_name_plural = 'Карты'
 
+    def __str__(self):
+        return f'{self.name} ------- {self.card_suit}'

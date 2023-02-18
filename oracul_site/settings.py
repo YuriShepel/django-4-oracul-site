@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'tarot_cards',
+    'articles',
 ]
 
 MIDDLEWARE = [
