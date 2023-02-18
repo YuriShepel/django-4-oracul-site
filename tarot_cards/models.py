@@ -43,10 +43,10 @@ class Card(models.Model):
     love_up = models.TextField(null=True, blank=True)
     love_down = models.TextField(null=True, blank=True)
 
-    сareer_up_tags = models.TextField(null=True, blank=True)
-    сareer_down_tags = models.TextField(null=True, blank=True)
-    сareer_up = models.TextField(null=True, blank=True)
-    сareer_down = models.TextField(null=True, blank=True)
+    career_up_tags = models.TextField(null=True, blank=True)
+    career_down_tags = models.TextField(null=True, blank=True)
+    career_up = models.TextField(null=True, blank=True)
+    career_down = models.TextField(null=True, blank=True)
 
     finance_up_tags = models.TextField(null=True, blank=True)
     finance_down_tags = models.TextField(null=True, blank=True)
@@ -63,6 +63,9 @@ class Card(models.Model):
     yes_no = models.CharField(max_length=255, null=True, blank=True)
 
     card_suit = models.ForeignKey(to=TarotSuits, on_delete=models.CASCADE)
+
+    seo_description = models.TextField(null=True, blank=True)
+    seo_key_words = models.CharField(max_length=255, null=True, blank=True)
 
     url = models.SlugField(max_length=100, unique=True)
 

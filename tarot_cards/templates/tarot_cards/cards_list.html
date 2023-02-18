@@ -63,7 +63,7 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn-primary card-button">{{ card.name }}</a>
+                            <a href="{% url 'tarot_cards:card_detail' card.url %}" class="btn btn-primary card-button">{{ card.name }}</a>
                         </div>
                     </div>
                 </div>

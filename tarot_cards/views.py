@@ -32,7 +32,7 @@ class CardsAndSuitsView(View):
     def get(self, request, suit_slug):
         suit = get_object_or_404(TarotSuits, url=suit_slug)
         if self.cards_list_template:
-            cards = Card.objects.filter(card_suit=suit)
+            cards = Card.objects.filter(card_suit=suit).order_by('id')
             context = {
                 'cards': cards,
                 'suit': suit,
@@ -40,3 +40,13 @@ class CardsAndSuitsView(View):
             return render(request, 'tarot_cards/cards_list.html', context)
         if self.suit_description_template:
             return render(request, 'tarot_cards/suit_description.html', {'suit': suit})
+
+
+def card_detail_view(request, card_slug):
+    card = get_object_or_404(Card, url=card_slug)
+    image_2 = card.card_suit.image_2
+    context = {
+        'card': card,
+        'image_2': image_2
+    }
+    return render(request, 'tarot_cards/card_detail.html', context)

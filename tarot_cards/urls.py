@@ -4,8 +4,6 @@ from . import views
 
 app_name = 'tarot_cards'
 
-# cards_list_template = (cards_list_template='tarot_cards/cards_list.html', suit_description_template=None)
-# suit_description_template = (cards_list_template=None, suit_description_template=tarot_cards/suit_description.html')
 cards_list_template = 'tarot_cards/cards_list.html'
 suit_description_template = 'tarot_cards/suit_description.html'
 
@@ -17,4 +15,5 @@ urlpatterns = [
     path('suit_description/<slug:suit_slug>/',
          views.CardsAndSuitsView.as_view(cards_list_template=None, suit_description_template=suit_description_template),
          name='suit_description'),
+    path('<slug:card_slug>/', views.card_detail_view, name='card_detail'),
 ]
