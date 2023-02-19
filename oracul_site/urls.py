@@ -23,7 +23,11 @@ from tarot_cards.views import IndexView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
-    path('', include('tarot_cards.urls', namespace='tarot_cards'))
+    path('tarot_cards/', include('tarot_cards.urls', namespace='tarot_cards')),
+    path('articles/', include('articles.urls', namespace='articles')),
+
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

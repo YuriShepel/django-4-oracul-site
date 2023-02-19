@@ -10,8 +10,8 @@
 
 
     <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}"/>
-    <link rel="stylesheet" href="{% static 'styles/layout.css' %}"/>
-    <link rel="stylesheet" href="{% static 'styles/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/css/layout.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/css/main.css' %}"/>
 
     {% block title %} {% endblock %}
 
@@ -45,6 +45,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'articles:articles_view' %}">Интересное</a>
                     </li>
                 </ul>
             </div>
@@ -132,5 +135,10 @@
 <script
         src="{% static 'styles/bootstrap/js/bootstrap.min.js' %}"
 ></script>
+
+{#Adding scroll to top arrow#}
+<div class="arrow-scroll">
+    {% include 'tarot_cards/include/scroll_to_top.html' %}
+</div>
 </body>
 </html>

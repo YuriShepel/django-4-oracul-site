@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import DetailView
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views import View
@@ -13,40 +14,47 @@ class IndexView(TitleMixin, TemplateView):
     title = 'Гадания онлайн'
 
 
-def tarot_suit_view(request):
-    major_arcana = TarotSuits.objects.get(id=1)
-    minor_arcana = TarotSuits.objects.filter(id__range=(2, 5))
+class TarotSuitView(TitleMixin, TemplateView):
+    """Displaying the page with all suits"""
+    template_name = 'tarot_cards/tarot_suits.html'
+    title = 'Справочник таро'
 
-    context = {
-        'title': 'Справочник таро',
-        'major_arcana': major_arcana,
-        'minor_arcana': minor_arcana
-    }
-    return render(request, 'tarot_cards/tarot_suits.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        major_arcana = TarotSuits.objects.get(id=1)
+        minor_arcana = TarotSuits.objects.filter(id__range=(2, 5))
+        context['major_arcana'] = major_arcana
+        context['minor_arcana'] = minor_arcana
+        return context
 
 
-class CardsAndSuitsView(View):
-    cards_list_template = 'tarot_cards/cards_list.html'
-    suit_description_template = 'tarot_cards/suit_description.html'
-
+class CardsView(View):
     def get(self, request, suit_slug):
         suit = get_object_or_404(TarotSuits, url=suit_slug)
-        if self.cards_list_template:
-            cards = Card.objects.filter(card_suit=suit).order_by('id')
-            context = {
-                'cards': cards,
-                'suit': suit,
-            }
-            return render(request, 'tarot_cards/cards_list.html', context)
-        if self.suit_description_template:
-            return render(request, 'tarot_cards/suit_description.html', {'suit': suit})
+        cards = Card.objects.filter(card_suit=suit).order_by('id')
+        context = {
+            'cards': cards,
+            'suit': suit,
+        }
+        return render(request, 'tarot_cards/cards_list.html', context)
 
 
-def card_detail_view(request, card_slug):
-    card = get_object_or_404(Card, url=card_slug)
-    image_2 = card.card_suit.image_2
-    context = {
-        'card': card,
-        'image_2': image_2
-    }
-    return render(request, 'tarot_cards/card_detail.html', context)
+class SuitDescriptionView(View):
+    def get(self, request, suit_slug):
+        suit = get_object_or_404(TarotSuits, url=suit_slug)
+        return render(request, 'tarot_cards/suit_description.html', {'suit': suit})
+
+
+class CardDetailView(DetailView):
+    """Displaying detail information of the card"""
+    model = Card
+    template_name = 'tarot_cards/card_detail.html'
+    context_object_name = 'card'
+    slug_field = 'url'
+    slug_url_kwarg = 'card_slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        card = context['card']
+        context['image_2'] = card.card_suit.image_2
+        return context

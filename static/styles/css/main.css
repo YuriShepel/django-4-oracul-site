@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+body {
+    font-family: "Roboto", serif;
+    font-size: 20px;
+    background: linear-gradient(90deg, #00009c 0%, #000000 100%);
+    color: aquamarine;
+}
+
+/* header scc */
+
+.navbar {
+    border-bottom: 0.1px solid aqua;
+}
+
+.main-container a {
+    color: aquamarine;
+}
+
+.navbar-nav .nav-link:hover {
+    color: aqua;
+    font-weight: 900;
+}
+
+.navbar-toggler {
+    background-color: #4c5af5;
+}
+
+.navbar-brand img {
+    width: 45px;
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+.navbar-brand {
+    animation: rotateHue 4s alternate infinite;
+}
+
+@keyframes rotateHue {
+    to {
+        filter: hue-rotate(1turn);
+    }
+}
+
+/* left navbar css */
+.main-section {
+    margin-top: 15px;
+}
+
+.main-section .left-navbar h4 {
+    height: 50px;
+    background: linear-gradient(360deg, #030631 0%, #4c5af5 100%);
+    border-radius: 5px 5px 0px 0px;
+    font-size: 1.5rem;
+    line-height: 20px;
+    color: aqua;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+.main-section .left-navbar .menu {
+    background: linear-gradient(270deg, #00009c 0%, #000000 100%);
+    border-left: 1px solid aqua;
+    border-right: 1px solid aqua;
+    border-bottom: 1px solid aqua;
+    border-radius: 0 0 5px 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-section .left-navbar .menu li a {
+    color: aquamarine;
+    line-height: 5px;
+}
+
+.main-section .left-navbar .menu li {
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-bottom: 7px;
+}
+
+.main-section .left-navbar .menu li:hover {
+    font-weight: 900;
+}
+
+.main-section .left-navbar .menu li a:hover {
+    color: aqua;
+}
+
+/* content block css */
+
+.image-block:hover img {
+    transform: scale(1.1);
+}
+
+img {
+    transition: transform 0.4s;
+}
+
+.image-block {
+    overflow: hidden;
+}
+
+.content-block .title-text {
+    margin: 10px;
+}
+
+.content-block p {
+    font-size: 1.12rem;
+}
+
+.btn-outline-primary {
+    color: aqua;
+    background: linear-gradient(270deg, #00009c 0%, #000000 100%);
+}
+
+/* article block css */
+.articles-block {
+    background: linear-gradient(270deg, #00009c 0%, #000000 100%);
+}
+
+.articles-block h2 {
+    font-size: 25px;
+    color: aqua;
+}
+
+.articles-block p a {
+    color: white;
+}
+
+.articles-block h2:hover {
+    font-weight: 900;
+}
+
+.articles-block p a:hover {
+    font-weight: 900;
+}
+
+/* footer css */
+footer {
+    border-top: 1px solid aqua;
+    padding: 20px;
+}
+
+.footer-text {
+    margin: auto auto;
+}
+
+.footer-text a {
+    color: aquamarine;
+}
+
+.footer-text a p:hover {
+    color: aqua;
+    font-weight: 900;
+}
+
+/* tarot_suits */
+.major-arcana,
+.minor-arcana {
+    display: flex;
+}
+
+.minor-arcana-row {
+    padding-left: 90px;
+    padding-right: 90px;
+
+    border-top: 1px solid aqua;
+    border-bottom: 1px solid aqua;
+}
+
+.card {
+    background: linear-gradient(270deg, #00009c 0%, #000000 100%);
+    border-radius: 15px;
+}
+
+.card-image:hover img {
+    transform: scale(1.1);
+}
+
+.card-img-top {
+    width: 190px;
+    transition: transform 0.4s;
+}
+
+.card-image {
+    overflow: hidden;
+}
+
+.btn-primary {
+    color: aqua;
+    background: linear-gradient(270deg, #00009c 0%, #000000 100%);
+    font-size: 15px;
+}
+
+/* tarot list css */
+
+.suits-info-text {
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.suits-info-text p {
+    color: aqua;
+    font-size: 20px;
+}
+
+.suits-info-text p:hover {
+    transition: transform 0.6s;
+    transform: scale(1.1);
+}
+
+.card-button:hover {
+    transition: transform 0.6s;
+    transform: scale(1.1);
+}
+
+/* suite description css */
+
+.article-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.general-table {
+    width: 300px;
+}
+
+.general-table,
+tr,
+td {
+    color: aquamarine;
+    border: 1px solid aquamarine;
+    padding: 3px;
+    text-align: left;
+}
+
+.bottom-image {
+    border-top: 1px solid aquamarine;
+}
+
+/* card description css */
+
+table .tag-text {
+    font-style: italic;
+}
+
+/*scroll css*/
+
+@media (max-width: 1000px) {
+    .arrow-scroll {
+        display: none;
+    }
+}
+
+/*articles.html css*/
+
+.article-title h2 {
+    font-size: 25px;
+    font-weight: 400;
+    color: aqua;
+}
+
+.article-title h2:hover {
+    font-weight: 900;
+}
+
+.article p{
+    margin-bottom: 5px;
+}
+
+.article p a {
+    color: white;
+}
+
+.article p a:hover {
+    font-weight: 900;
+}
+
+/*article_detail.html css*/
+.article-detail-title{
+    font-size: 25px;
+    color: #00e9cf;
+}
+
+.article-detail-title:hover {
+    font-weight: 900;
+}

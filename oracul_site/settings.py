@@ -13,6 +13,8 @@ import environ
 
 from pathlib import Path
 
+from common.ckeditor_configs import CKEDITOR_CONFIGS
+
 env = environ.Env(
     DEBUG=bool,
     SECRET_KEY=str,
@@ -56,6 +58,9 @@ INSTALLED_APPS = [
 
     'tarot_cards',
     'articles',
+    'ckeditor',
+    'ckeditor_uploader',
+
 ]
 
 MIDDLEWARE = [
@@ -136,6 +141,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+# STATIC_ROOT = BASE_DIR / 'static'
 
 # Media files
 
@@ -146,3 +152,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# This setting specifies a relative path to CKEditor media upload directory
+# https://github.com/django-ckeditor/django-ckeditor#required-for-using-widget-with-file-upload
+CKEDITOR_UPLOAD_PATH = "uploads/"
