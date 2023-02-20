@@ -3,6 +3,7 @@ from django.views.generic import DetailView
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 
+from articles.models import Article
 from common.views import TitleMixin
 from .models import TarotSuits, Card
 
@@ -58,3 +59,9 @@ class CardDetailView(DetailView):
     """Displaying detail information of the card"""
     model = Card
     slug_field = 'url'
+
+#
+# class RightSidebarView(ListView):
+#     model = Article
+#     queryset = Article.objects.all()
+#     template_name = 'tarot_cards/include/right-sidebar.html'

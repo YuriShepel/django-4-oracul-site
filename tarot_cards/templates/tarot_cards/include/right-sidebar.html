@@ -1,46 +1,18 @@
-<divcc class="right-sidebar col-lg-2 col-md-12">
-                <div class="row px-2">
-                    <div class="col-lg-12 sidebar my-4">
-                        <a href="#">
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tenetur porro labore error distinctio nesciunt, quis a aliquid
-                            et. Veritatis deleniti sequi eligendi atque. Vero, quas
-                            numquam. <a href="#">Далее>>></a>
-                        </p>
-                    </div>
-                    <div class="col-lg-12 sidebar my-4">
-                        <a href="#">
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </a>
-                        <p>
-                            Tenetur porro labore error distinctio nesciunt, quis a aliquid
-                            et. Veritatis deleniti sequi eligendi atque. Vero, quas
-                            numquam. <a href="#">Learn More>>></a>
-                        </p>
-                    </div>
-                    <div class="col-lg-12 sidebar my-4">
-                        <a href="#">
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet error distinctio nesciunt, quis a
-                            aliquid et. Veritatis deleniti sequi eligendi atque. Vero,
-                            quas numquam. <a href="#">Learn More>>></a>
-                        </p>
-                    </div>
-                    <div class="col-lg-12 sidebar my-4">
-                        <a href="#">
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            distinctio nesciunt, quis a aliquid et. Veritatis deleniti
-                            sequi eligendi atque. Vero, quas numquam.
-                            <a href="#">Learn More>>></a>
-                        </p>
-                    </div>
+<div class="right-sidebar col-lg-2 col-md-12">
+    <div class="row px-2">
+        {% for article in right_sidebar_articles %}
+            <div class="row px-2">
+                <div class="col-lg-12 sidebar my-4">
+                    <a href="{% url 'articles:article_detail' article.url %}">
+                        <h2>{{ article.title }}</h2>
+                    </a>
+                    <p>
+                        {{ article.text | safe | truncatechars:100 }}
+                        <a href="{% url 'articles:article_detail' article.url %}">Далее>>></a>
+                    </p>
                 </div>
-            </divcc>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
