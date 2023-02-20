@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .scroll-to-top {
+            display: none;
+            width: 70px;
+            height: 70px;
+            background: url({% static 'files/arrow_to_top.png' %}) no-repeat center center;
+            background-size: cover;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            transition: transform 0.4s;
+        }
+
+        .scroll-to-top:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" title=""></button>
+
+<script>
+    // Scroll to top button
+    const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            // Show the button when the page is scrolled down 300px
+            scrollToTopButton.style.display = 'block';
+        } else {
+            // Hide the button when the page is scrolled up
+            scrollToTopButton.style.display = 'none';
+        }
+    });
+
+    scrollToTopButton.addEventListener('click', function () {
+        // Smoothly scroll the page to the top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% extends 'tarot_cards/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description" content="#"/>
+    <meta
+            name="keywords"
+            content="#"/>
+{% endblock %}
+
+{% block title %}
+    <title>Интересные статьи</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="image-block text-center">
+                    <img
+                            class="title-image"
+                            src="{% static 'images/image_for_articles_1.jpg' %}"
+                            class="rounded"
+                            alt="girl with card"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2 mt-2 justify-content-center">
+            <div class="col-4 suits-info-text">
+                <div class="text-center mb-4 mt-4">
+
+                    <p>Интересные статьи</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col mt-4 justify-content-center article">
+                {% for article in article_list %}
+                    <a href="{% url 'articles:article_detail' article.url %}" class="article-title">
+                        <h2>{{ article.title }}</h2>
+                    </a>
+                    <p class="mt-2">
+                        {{ article.text | safe | truncatechars:200 }}
+                        <a href="{% url 'articles:article_detail' article.url %}">Далее>>></a>
+                    </p>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="row justify-content-center bottom-image">
+            <div class="col-4 pb-1 pt-1">
+                <div class="image-block text-center">
+                    <img
+                            src="{% static 'images/image_for_articles_2.jpg' %}"
+                            alt="Mysterious Objects"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

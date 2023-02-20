@@ -1,0 +1,62 @@
+{% extends 'tarot_cards/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description" content="{{ article.seo_description }}"/>
+    <meta
+            name="keywords"
+            content="{{ article.seo_keywords }}"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ article.title }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="image-block text-center">
+                    <img
+                            class="title-image"
+                            src="{% static 'images/image_for_articles_1.jpg' %}"
+                            class="rounded"
+                            alt="girl with card"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <div class="col-3 suits-info-text">
+                <div class="text-center mb-4 mt-4">
+                    <a href="{% url 'articles:articles_view' %}"><p>Вернуться к статьям</p></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-2 mb-2 justify-content-center">
+            <div class="col-8 justify-content-center article">
+
+                <h2 class="mb-4 mt-4 article-detail-title">
+                    {{ article.title }}
+                </h2>
+                <p class="">
+                    {{ article.text | safe }}
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center bottom-image">
+            <div class="col-4 pb-1 pt-1">
+                <div class="image-block text-center">
+                    <img
+                            src="{% static 'images/image_for_articles_2.jpg' %}"
+                            alt="Mysterious Objects"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
