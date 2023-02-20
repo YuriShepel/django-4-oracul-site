@@ -14,6 +14,7 @@ class IndexView(TitleMixin, TemplateView):
 
 
 class TarotSuitListView(TitleMixin, ListView):
+    """Displays all suits page"""
     model = TarotSuits
     title = 'Справочник таро'
     template_name = 'tarot_cards/tarot_suits.html'
@@ -27,6 +28,8 @@ class TarotSuitListView(TitleMixin, ListView):
 
 
 class CardsListView(ListView):
+    """Displays cards of a specified suit"""
+    """Displays cards of a specified suit"""
     model = Card
     template_name = 'tarot_cards/cards_list.html'
     context_object_name = 'cards'

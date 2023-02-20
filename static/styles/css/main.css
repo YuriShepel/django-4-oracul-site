@@ -119,24 +119,24 @@ img {
 }
 
 /* article block css */
-.articles-block {
+.right-sidebar {
     background: linear-gradient(270deg, #00009c 0%, #000000 100%);
 }
 
-.articles-block h2 {
+.right-sidebar h2 {
     font-size: 25px;
     color: aqua;
 }
 
-.articles-block p a {
+.right-sidebar p a {
     color: white;
 }
 
-.articles-block h2:hover {
+.right-sidebar h2:hover {
     font-weight: 900;
 }
 
-.articles-block p a:hover {
+.right-sidebar p a:hover {
     font-weight: 900;
 }
 
