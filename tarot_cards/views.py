@@ -3,7 +3,8 @@ from django.views.generic import DetailView
 from django.views.generic.list import ListView
 
 from common_segments.common.views import TitleMixin
-from .models import TarotSuits, Card
+
+from .models import Card, TarotSuits
 
 
 class TarotSuitListView(TitleMixin, ListView):
