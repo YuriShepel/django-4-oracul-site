@@ -1,17 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
-from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 
-from articles.models import Article
-from common.views import TitleMixin
+from common_segments.common.views import TitleMixin
 from .models import TarotSuits, Card
-
-
-class IndexView(TitleMixin, TemplateView):
-    """Displaying the home page of the site"""
-    template_name = 'tarot_cards/index.html'
-    title = 'Гадания онлайн'
 
 
 class TarotSuitListView(TitleMixin, ListView):
@@ -59,9 +51,3 @@ class CardDetailView(DetailView):
     """Displaying detail information of the card"""
     model = Card
     slug_field = 'url'
-
-#
-# class RightSidebarView(ListView):
-#     model = Article
-#     queryset = Article.objects.all()
-#     template_name = 'tarot_cards/include/right-sidebar.html'

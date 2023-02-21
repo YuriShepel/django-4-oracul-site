@@ -1,6 +1,6 @@
 from django import template
 
-from ..models import TarotSuits
+from tarot_cards.models import TarotSuits
 
 register = template.Library()
 

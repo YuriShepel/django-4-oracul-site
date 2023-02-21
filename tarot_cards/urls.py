@@ -4,9 +4,6 @@ from . import views
 
 app_name = 'tarot_cards'
 
-# cards_list_template = 'tarot_cards/cards_list.html'
-# suit_description_template = 'tarot_cards/suit_description.html'
-
 urlpatterns = [
     path('tarot_suits/', views.TarotSuitListView.as_view(), name='tarot_suits'),
     path('tarot_suits/<slug:slug>/', views.CardsListView.as_view(), name='cards_list'),

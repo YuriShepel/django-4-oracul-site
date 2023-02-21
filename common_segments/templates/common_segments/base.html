@@ -20,23 +20,23 @@
 <body>
 
 <header>
-    {% include 'tarot_cards/include/header.html' %}
+    {% include 'common_segments/include/header.html' %}
 </header>
 
 <section>
     <div class="container-fluid">
         <div class="main-section row">
-            {% include 'tarot_cards/include/left_sidebar.html' %}
+            {% include 'common_segments/include/left_sidebar.html' %}
 
             {% block content %} {% endblock %}
 
-            {% include 'tarot_cards/include/right-sidebar.html' %}
+            {% include 'common_segments/include/right-sidebar.html' %}
         </div>
     </div>
 </section>
 
 <footer>
-    {% include 'tarot_cards/include/footer.html' %}
+    {% include 'common_segments/include/footer.html' %}
 </footer>
 
 <script
@@ -45,7 +45,7 @@
 
 {#Adding scroll to top arrow#}
 <div class="arrow-scroll">
-    {% include 'tarot_cards/include/scroll_to_top.html' %}
+    {% include 'common_segments/include/scroll_to_top.html' %}
 </div>
 
 </body>

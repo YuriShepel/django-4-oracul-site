@@ -1,4 +1,4 @@
-{% extends 'tarot_cards/base.html' %}
+{% extends 'common_segments/base.html' %}
 {% load static %}
 
 {% block seo %}
@@ -10,220 +10,228 @@
 {% endblock %}
 
 {% block title %}
-        <title>{{ card.name }}</title>
+    <title>{{ card.name }}</title>
 {% endblock %}
 
 {% block content %}
-          <!-- central content block -->
-          <div class="content-block col-lg-8 col-md-12">
-            <div class="row justify-content-center">
-              <div class="col-2">
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-2">
                 <div class="image-block">
-                  <img
-                    class="title-image justify-content-center"
-                    src="{{ card.image_1.url }}"
-                    class="rounded"
-                    alt="{{ card.name }}"
-                  />
+                    <img
+                            class="title-image justify-content-center"
+                            src="{{ card.image_1.url }}"
+                            class="rounded"
+                            alt="{{ card.name }}"
+                    />
                 </div>
-              </div>
             </div>
+        </div>
 
-            <div class="row mb-2 mt-2 justify-content-center">
-              <div class="col-4 suits-info-text">
+        <div class="row mb-2 mt-2 justify-content-center">
+            <div class="col-4 suits-info-text">
                 <div class="text-center mb-4 mt-4">
-                  <p>{{ card.name }}</p>
+                    <p>{{ card.name }}</p>
                 </div>
-              </div>
             </div>
+        </div>
 
-            <div class="row">
-              <div class="table mt-3 mb-3">
+        <div class="row mb-2 mt-2 justify-content-center">
+            <div class="col-4 suits-info-text">
+                <div class="text-center mb-4 mt-4">
+                    <a href="{% url 'tarot_cards:tarot_suits' %}"><p>К мастям</p></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="table mt-3 mb-3">
                 <table class="table">
-                  <thead>
+                    <thead>
                     <tr class="justify-content-center">
-                      <th scope="col">Положение карты</th>
-                      <th scope="col">Ключевые слова</th>
+                        <th scope="col">Положение карты</th>
+                        <th scope="col">Ключевые слова</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                    </thead>
+                    <tbody>
                     <tr>
-                      <td>Прямое положение</td>
-                      <td class="tag-text">
-                        {{ card.general_up_tags }}
-                      </td>
+                        <td>Прямое положение</td>
+                        <td class="tag-text">
+                            {{ card.general_up_tags }}
+                        </td>
                     </tr>
                     <tr>
-                      <td>Перевернутое положение</td>
-                      <td class="tag-text">
-                        {{ card.general_down_tags }}
-                      </td>
+                        <td>Перевернутое положение</td>
+                        <td class="tag-text">
+                            {{ card.general_down_tags }}
+                        </td>
                     </tr>
-                  </tbody>
+                    </tbody>
                 </table>
-              </div>
             </div>
+        </div>
 
-            <div class="row text-information">
-              <div class="col mt-4 mb-4 justify-content-center">
+        <div class="row text-information">
+            <div class="col mt-4 mb-4 justify-content-center">
                 <h2 class="article-title">Общее значение карты {{ card.name }}</h2>
                 <p>
-                  {{ card.general_meaning }}
+                    {{ card.general_meaning }}
                 </p>
                 <h2 class="article-title">
-                  Значение карты {{ card.name }} в прямом положении
+                    Значение карты {{ card.name }} в прямом положении
                 </h2>
                 <p>
-                  {{ card.general_up }}
+                    {{ card.general_up }}
                 </p>
                 <h2 class="article-title">
-                  Значение карты {{ card.name }} в перевернутом положении
+                    Значение карты {{ card.name }} в перевернутом положении
                 </h2>
                 <p>
-                  {{ card.general_down }}
+                    {{ card.general_down }}
                 </p>
                 <h2 class="article-title">Значение карты {{ card.name }} в любви</h2>
 
                 <div class="row">
-                  <div class="table mt-3 mb-3">
-                    <table class="table">
-                      <thead>
-                        <tr class="justify-content-center">
-                          <th scope="col">Положение карты</th>
-                          <th scope="col">Ключевые слова</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Прямое положение</td>
-                          <td class="tag-text">
-                            {{ card.love_up_tags }}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Перевернутое положение</td>
-                          <td class="tag-text">
-                            {{ card.love_down_tags }}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                    <div class="table mt-3 mb-3">
+                        <table class="table">
+                            <thead>
+                            <tr class="justify-content-center">
+                                <th scope="col">Положение карты</th>
+                                <th scope="col">Ключевые слова</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Прямое положение</td>
+                                <td class="tag-text">
+                                    {{ card.love_up_tags }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Перевернутое положение</td>
+                                <td class="tag-text">
+                                    {{ card.love_down_tags }}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <h2 class="article-title">
-                  Значение в прямом положении карты {{ card.name }} в любви
+                    Значение в прямом положении карты {{ card.name }} в любви
                 </h2>
                 <p>
-                  {{ card.love_up }}
+                    {{ card.love_up }}
                 </p>
                 <h2 class="article-title">
-                  Значение в перевернутом положении карты {{ card.name }} в любви
+                    Значение в перевернутом положении карты {{ card.name }} в любви
                 </h2>
                 <p>
-                  {{ card.love_down }}
+                    {{ card.love_down }}
                 </p>
                 <h2 class="article-title">
-                  Значение карты {{ card.name }} в работе и карьере
+                    Значение карты {{ card.name }} в работе и карьере
                 </h2>
 
                 <div class="row">
-                  <div class="table mt-3 mb-3">
-                    <table class="table">
-                      <thead>
-                        <tr class="justify-content-center">
-                          <th scope="col">Положение карты</th>
-                          <th scope="col">Ключевые слова</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Прямое положение</td>
-                          <td class="tag-text">
-                            {{ card.career_up_tags }}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Перевернутое положение</td>
-                          <td class="tag-text">
-                            {{ card.career_down_tags }}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                    <div class="table mt-3 mb-3">
+                        <table class="table">
+                            <thead>
+                            <tr class="justify-content-center">
+                                <th scope="col">Положение карты</th>
+                                <th scope="col">Ключевые слова</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Прямое положение</td>
+                                <td class="tag-text">
+                                    {{ card.career_up_tags }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Перевернутое положение</td>
+                                <td class="tag-text">
+                                    {{ card.career_down_tags }}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <h2 class="article-title">
-                  Значение в прямом положении карты {{ card.name }} в работе и
-                  карьере
+                    Значение в прямом положении карты {{ card.name }} в работе и
+                    карьере
                 </h2>
                 <p>
-                  {{ card.career_up }}
+                    {{ card.career_up }}
                 </p>
                 <h2 class="article-title">
-                  Значение в перевернутом положении карты {{ card.name }} в работе и
-                  карьере
+                    Значение в перевернутом положении карты {{ card.name }} в работе и
+                    карьере
                 </h2>
                 <p>
-                  {{ card.career_down }}
+                    {{ card.career_down }}
                 </p>
                 <h2 class="article-title">
-                  Значение карты {{ card.name }} в финансовом вопросе
+                    Значение карты {{ card.name }} в финансовом вопросе
                 </h2>
 
                 <div class="row">
-                  <div class="table mt-3 mb-3">
-                    <table class="table">
-                      <thead>
-                        <tr class="justify-content-center">
-                          <th scope="col">Положение карты</th>
-                          <th scope="col">Ключевые слова</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Прямое положение</td>
-                          <td class="tag-text">
-                            {{ card.finance_up_tags }}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Перевернутое положение</td>
-                          <td class="tag-text">
-                            {{ card.finance_down_tags }}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                    <div class="table mt-3 mb-3">
+                        <table class="table">
+                            <thead>
+                            <tr class="justify-content-center">
+                                <th scope="col">Положение карты</th>
+                                <th scope="col">Ключевые слова</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Прямое положение</td>
+                                <td class="tag-text">
+                                    {{ card.finance_up_tags }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Перевернутое положение</td>
+                                <td class="tag-text">
+                                    {{ card.finance_down_tags }}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <h2 class="article-title">
-                  Значение в прямом положении карты {{ card.name }} в финансовом
-                  аспекте
+                    Значение в прямом положении карты {{ card.name }} в финансовом
+                    аспекте
                 </h2>
                 <p>
-                  {{ card.finance_up }}
+                    {{ card.finance_up }}
                 </p>
                 <h2 class="article-title">
-                  Значение в перевернутом положении карты {{ card.name }} в
-                  финансовом аспекте
+                    Значение в перевернутом положении карты {{ card.name }} в
+                    финансовом аспекте
                 </h2>
                 <p>
-                  {{ card.finance_down }}
+                    {{ card.finance_down }}
                 </p>
-              </div>
             </div>
+        </div>
 
-            <div class="row justify-content-center bottom-image">
-              <div class="col-4 pb-1 pt-1">
+        <div class="row justify-content-center bottom-image">
+            <div class="col-4 pb-1 pt-1">
                 <div class="image-block text-center">
-                  <img
-                    src="{{ card.card_suit.image_2.url }}"
-                    alt="{{ card.name }}"
-                  />
+                    <img
+                            src="{{ card.card_suit.image_2.url }}"
+                            alt="{{ card.name }}"
+                    />
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
 {% endblock %}
 
 

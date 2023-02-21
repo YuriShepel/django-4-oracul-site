@@ -13,7 +13,7 @@ import environ
 
 from pathlib import Path
 
-from common.ckeditor_configs import CKEDITOR_CONFIGS
+from common_segments.common.ckeditor_configs import CKEDITOR_CONFIGS
 
 env = environ.Env(
     DEBUG=bool,
@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'articles',
     'ckeditor',
     'ckeditor_uploader',
+    'common_segments',
 
 ]
 
@@ -87,7 +88,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                'tarot_cards.context_processors.right_sidebar'
+                'common_segments.common.context_processors.right_sidebar'
             ],
         },
     },

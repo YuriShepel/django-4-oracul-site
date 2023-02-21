@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from tarot_cards.views import IndexView
+from common_segments.views import IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
