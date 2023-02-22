@@ -13,7 +13,7 @@ class TarotSuits(models.Model):
     image_1 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
     image_2 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
     image_3 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
-    image_4 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True)
+    image_4 = models.ImageField(upload_to='tarot_cards/suits_images', blank=True, null=True, default=None)
 
     seo_description = models.TextField(null=True, blank=True)
     seo_tags = models.CharField(max_length=255, unique=True, null=True, blank=True)
@@ -30,7 +30,7 @@ class TarotSuits(models.Model):
 
 class Card(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    image_1 = models.ImageField(upload_to='tarot_cards/cards_images', blank=True)
+    image_1 = models.ImageField(upload_to='tarot_cards/cards_images', blank=True, null=True, default=None)
 
     general_up_tags = models.TextField(null=True, blank=True)
     general_down_tags = models.TextField(null=True, blank=True)

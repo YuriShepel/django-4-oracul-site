@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from common_segments.common.views import TitleMixin
+from common_segments.common.mixins import TitleMixin
 
 
 class IndexView(TitleMixin, TemplateView):
