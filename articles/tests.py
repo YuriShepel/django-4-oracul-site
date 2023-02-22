@@ -45,5 +45,5 @@ class ArticleDetailViewTestCase(TestCase):
     def test_articles_detail_view_template_name(self):
         self.assertTemplateUsed(self.response, 'articles/article_detail.html')
 
-    def test_index_view_content(self):
+    def test_articles_detail_view_content(self):
         self.assertIn('My article content', self.response.content.decode())
