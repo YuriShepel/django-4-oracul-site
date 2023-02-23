@@ -58,6 +58,8 @@ INSTALLED_APPS = [
 
     'tarot_cards',
     'articles',
+    'tarot_divinations',
+
     'ckeditor',
     'ckeditor_uploader',
     'common_segments',

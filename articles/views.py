@@ -1,6 +1,7 @@
 from django.views.generic import DetailView, ListView
 
 from common_segments.common.mixins import TitleMixin
+
 from .models import Article
 
 

@@ -54,7 +54,7 @@
                 >
                     <div class="card mb-3 text-center minor-arcana-card">
                         <div class="card-image">
-                            <a href="#">
+                            <a href="{% url 'tarot_cards:card_detail' card.url %}">
                                 <img
                                         src={{ card.image_1.url }}
                                                 class="card-img-top"
