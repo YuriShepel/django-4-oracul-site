@@ -1,0 +1,71 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="Откройте для себя мудрость в словах знаменитостей с помощью онлайн гадания на цитатах. Наслаждайтесь увлекательной игрой и узнавайте, какие цитаты судьбоносны для вас. Получите новое понимание своей жизни и возможность изменить свой путь к успеху. Присоединяйтесь к нашей онлайн-коммьюнити и раскройте свой потенциал с гаданиями на цитаты."/>
+    <meta
+            name="keywords"
+            content="Онлайн Гадание,Гадание на Цитатах, Судьба, Успех"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <p>
+                        Откройте для себя мудрость в словах знаменитостей с помощью онлайн гадания на цитатах.
+                        Наслаждайтесь увлекательной игрой и узнавайте, какие цитаты судьбоносны для вас. Получите новое
+                        понимание своей жизни и возможность изменить свой путь к успеху.
+                    </p>
+                    <hr>
+                    <p>Выберите направление, которое вас интересует.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row minor-arcana-row justify-content-center">
+            {% for category in categories %}
+                <div
+                        class="col-lg-3 col-md-6 mt-4 justify-content-center text-center minor-arcana"
+                >
+                    <div class="card mb-3 minor-arcana-card">
+                        <div class="card-image">
+                            <a href="{{ category.url }}"
+                            ><img
+                                    src="{{ category.image.url }}"
+                                    class="card-img-top"
+                                    alt="Cups"
+                            /></a>
+                        </div>
+                        <div class="card-body">
+                            <a
+                                    href="{{ category.url }}"
+                                    class="btn btn-primary card-button"
+                            >{{ category.name }}</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/quotes_image.jpg' %}"
+                            alt="Divination"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -33,12 +33,12 @@
         <div class="row mb-2 mt-2 justify-content-center">
             <div class="col-4 suits-info-text me-1">
                 <div class="text-center mb-4 mt-4">
-                    <a href="{% url 'tarot_cards:tarot_suits'%}">
+                    <a href="{% url 'tarot_cards:tarot_suits' %}">
                         <p>Вернуться к мастям</p>
                     </a>
                 </div>
             </div>
-                        <div class="col-4 suits-info-text">
+            <div class="col-4 suits-info-text">
                 <div class="text-center mb-4 mt-4">
                     <a href="{% url 'tarot_cards:suit_description' suit.url %}">
                         <p>Узнать подробную информацию о масти</p>
@@ -63,7 +63,8 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'tarot_cards:card_detail' card.url %}" class="btn btn-primary card-button">{{ card.name }}</a>
+                            <a href="{% url 'tarot_cards:card_detail' card.url %}"
+                               class="btn btn-primary card-button">{{ card.name }}</a>
                         </div>
                     </div>
                 </div>
