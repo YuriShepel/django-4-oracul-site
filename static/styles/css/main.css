@@ -124,7 +124,7 @@ img {
 }
 
 .right-sidebar h2 {
-    font-size: 25px;
+    font-size: 20px;
     color: aqua;
 }
 
@@ -292,3 +292,5 @@ table .tag-text {
 .article-detail-title:hover {
     font-weight: 900;
 }
+
+/*taro_day_card-detail.html css*/

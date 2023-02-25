@@ -25,7 +25,7 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('tarot_cards/', include('tarot_cards.urls', namespace='tarot_cards')),
     path('articles/', include('articles.urls', namespace='articles')),
-    path('tarot_devinations/', include('articles.urls', namespace='tarot_devinations')),
+    path('tarot_devinations/', include('tarot_divinations.urls', namespace='tarot_devinations')),
 
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
