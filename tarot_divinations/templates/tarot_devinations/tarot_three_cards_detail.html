@@ -1,0 +1,57 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="#"/>
+    <meta
+            name="keywords"
+            content="Карта дня Таро, Гадание Таро онлайн, Таро на каждый день, Мудрые слова, Инсайты и подсказки"/>
+{% endblock %}
+
+{% block title %}
+    <title>Онлайн гадание Три карты</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+                <div class="row day-card">
+                    <div class="col">
+                        <div class="text-center mb-4">
+                            <h1>Гадание Три карты Таро</h1>
+                        </div>
+                    </div>
+                </div>
+        {% for data in cards_data %}
+            <div class="row proposition-text mb-4">
+                <div class="col-2 image-block">
+                    <img
+                            src="{{ data.image.url }}" width="100"
+                            alt="Карта Таро"
+                    />
+                </div>
+                <div class="col-10">
+                    <div class="mb-4">
+                        <p style="color: white">{{ data.period }}</p>
+                        <p>{{ data.meaning }}</p>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+
+
+        <div class="row justify-content-center">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/thre_tarot_cards.jpg' %}"
+                            alt="Карта дня"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

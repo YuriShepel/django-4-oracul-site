@@ -1,0 +1,92 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="Получите подсказку на каждый день с помощью нашей карты дня Таро! Нажмите на карту, чтобы получить инсайты и мудрые слова, которые помогут вам принимать лучшие решения."/>
+    <meta
+            name="keywords"
+            content="Карта дня Таро, Гадание Таро онлайн, Таро на каждый день, Мудрые слова, Инсайты и подсказки"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <h1>Три карты Таро</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="mb-4">
+                    <p class="mb-2">
+                        Добро пожаловать на страницу онлайн гадания на Таро!
+                    </p>
+                    <p class="mb-2">
+                        Мы предлагаем вам узнать о своем прошлом,
+                        настоящем и будущем, используя три карты таро.
+                    </p>
+                    <p class="mb-2">
+                        Наше гадание на таро может помочь вам получить новый взгляд на вашу жизнь и принять лучшие
+                        решения в будущем.
+                        Просто сконцентрируйтесь на вашем вопросе и нажмите ГАДАТЬ. Каждая карта предоставит вам ценную
+                        информацию о вашей жизни.
+                    </p>
+                    <p class="mb-2">
+                        Первая карта - прошлое, вторая - настоящее, третья - будущее.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <p>Давайте начнем:</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row major-arcana-row justify-content-center">
+            <div class="col-4 justify-content-center major-arcana">
+                <div class="card text-center mb-3">
+                    <div class="card-image">
+                        <a href="
+                    {% url 'tarot_devinations:three_tarot_cards' %}">
+                            <img
+                                    src=" {% static 'images/revers_three_cards.png' %} "
+                                    class="card-img-top mx-auto d-block text-center"
+                                    alt="Карта таро"
+                            />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'tarot_devinations:three_tarot_cards' %}" class="btn btn-primary card-button"
+                        >Гадать</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row justify-content-center bottom-block">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/thre_tarot_cards.jpg' %}"
+                            alt="Girl with Tarot card"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

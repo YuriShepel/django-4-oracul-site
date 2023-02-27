@@ -60,7 +60,7 @@ class Card(models.Model):
     card_of_day = models.TextField(null=True, blank=True)
     card_advice = models.TextField(null=True, blank=True)
 
-    yes_no = models.CharField(max_length=255, null=True, blank=True)
+    yes_no = models.CharField(max_length=500, null=True, blank=True)
 
     card_suit = models.ForeignKey(to=TarotSuits, on_delete=models.CASCADE)
 

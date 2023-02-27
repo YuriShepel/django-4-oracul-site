@@ -44,6 +44,8 @@ body {
     }
 }
 
+
+
 /* left navbar css */
 .main-section {
     margin-top: 15px;
@@ -73,6 +75,7 @@ body {
 }
 
 .main-section .left-navbar .menu li a {
+    font-size: 17px;
     color: aquamarine;
     line-height: 5px;
 }
