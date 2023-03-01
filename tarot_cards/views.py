@@ -23,7 +23,6 @@ class TarotSuitListView(TitleMixin, ListView):
 
 class CardsListView(ListView):
     """Displays cards of a specified suit"""
-    """Displays cards of a specified suit"""
     model = Card
     template_name = 'tarot_cards/cards_list.html'
     context_object_name = 'cards'
