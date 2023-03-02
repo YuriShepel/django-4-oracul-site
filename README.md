@@ -1,4 +1,4 @@
-# Tarot card reference guide
+# Tarot card reference guide (Project in progress)
 ## :bulb: About
 ___
 
