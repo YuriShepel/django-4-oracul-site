@@ -1,6 +1,7 @@
 # Tarot card reference guide (Project in progress)
 ## :bulb: About
 ___
+This is my first **web project** after studying Python and Django. 
 
 This is a **Django web application** dedicated to fortune-telling and Tarot cards. The website includes a Tarot card reference guide with descriptions of each card, various types of readings, and articles about esotericism, Tarot, and divination.
 
@@ -38,7 +39,7 @@ ___
 
 ## :computer: Team
 ___
-YuriShepel - donbidonn@gmail.com
+YuriShepel (Backend/Frontend) - donbidonn@gmail.com
 
 ## :grey_exclamation: License
 ___
