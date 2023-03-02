@@ -263,13 +263,14 @@ table .tag-text {
 
 /*articles.html css*/
 
-.article-title h2 {
+.article-title h1 {
+
     font-size: 25px;
     font-weight: 400;
     color: aqua;
 }
 
-.article-title h2:hover {
+.article-title h1:hover {
     font-weight: 900;
 }
 

@@ -42,7 +42,7 @@
             <div class="col mt-4 justify-content-center article">
                 {% for article in article_list %}
                     <a href="{% url 'articles:article_detail' article.url %}" class="article-title">
-                        <h2>{{ article.title }}</h2>
+                        <h1>{{ article.title }}</h1>
                     </a>
                     <p class="mt-2">
                         {{ article.text | safe | truncatechars:200 }}
