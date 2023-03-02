@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Quote, Category
+from .models import Category, Quote
 
 
 @admin.register(Quote)

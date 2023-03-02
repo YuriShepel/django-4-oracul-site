@@ -1,0 +1,55 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="Наши волшебные карты помогут вам быстро получить ответы на вопрос Да или Нет. Это могут быть вопросы о жизни, любви и карьере. Просто нажмите на карту и получите свой ответ прямо сейчас!"/>
+    <meta
+            name="keywords"
+            content="гадание на Да или Нет, волшебные карты, ответы на вопросы, жизнь, любовь"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ name }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row day-card">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <h1>Ваш ответ:</h1>
+                    <h3 style="color: white">{{ name }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text mb-4">
+            <div class="col-2 image-block">
+                <img
+                        src="{{ image.url }}" width="150"
+                        alt="{{ name }}"
+                />
+            </div>
+            <div class="col-10">
+                <div class="mb-4">
+
+                    <p>{{ yes_or_no }}</p>
+
+                </div>
+            </div>
+        </div>
+    <hr>
+        <div class="row justify-content-center">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/yes_or_no_img.jpg' %}"
+                            alt="Жрица"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,10 +1,12 @@
+import random
+
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
-from .models import Category, Quote
 
 from common_segments.common.mixins import TitleMixin
-import random
+
+from .models import Category, Quote
 
 
 class CategoryListView(TitleMixin, ListView):

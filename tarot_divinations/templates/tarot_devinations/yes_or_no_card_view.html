@@ -1,0 +1,84 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="Наши волшебные карты помогут вам быстро получить ответы на вопрос Да или Нет. Это могут быть вопросы о жизни, любви и карьере. Просто нажмите на карту и получите свой ответ прямо сейчас!"/>
+    <meta
+            name="keywords"
+            content="гадание на Да или Нет, волшебные карты, ответы на вопросы, жизнь, любовь"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <h1>Онлайн гадание Да или Нет</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="mb-4">
+                    <p class="mb-2">
+                        Добро пожаловать на нашу удивительную страницу онлайн гадания Да или Нет!
+                    </p>
+
+                    <p class="mb-2">
+                        У нас есть отличный способ получить ответ на ваш вопрос. Просто закройте глаза, задайте вопрос и
+                        нажмите на карту. Вы получите мгновенный ответ на свой вопрос.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <p>Перейти к гаданию и получить ответ:</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row major-arcana-row justify-content-center">
+            <div class="col-4 justify-content-center major-arcana">
+                <div class="card text-center mb-3">
+                    <div class="card-image">
+                        <a href="
+                    {% url 'tarot_devinations:yes_or_no_tarot' %}">
+                            <img
+                                    src=" {% static 'images/revers_yes_or_no.jpg' %} "
+                                    class="card-img-top mx-auto d-block text-center"
+                                    alt="Major Arcana"
+                            />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'tarot_devinations:yes_or_no_tarot' %}" class="btn btn-primary card-button"
+                        >Нажмите на карту</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row justify-content-center bottom-block">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/yes_or_no_img.jpg' %}"
+                            alt="Girl with Tarot card"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

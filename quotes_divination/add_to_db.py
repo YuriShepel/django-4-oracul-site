@@ -14,7 +14,7 @@ import django
 django.setup()
 
 # Импортируем модель Quote
-from quotes_divination.models import Quote, Category
+from quotes_divination.models import Category, Quote
 
 with open('categorized_love_quotes.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',', quotechar='"')

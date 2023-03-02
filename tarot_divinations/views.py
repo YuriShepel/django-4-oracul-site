@@ -1,21 +1,21 @@
-import random
-
-from django.views.generic import TemplateView, DetailView
 
 from random import sample
-from django.shortcuts import render
-from tarot_cards.models import Card
+
+from django.views.generic import DetailView, TemplateView
 from django.views.generic.list import ListView
+
 from common_segments.common.mixins import TitleMixin
+from tarot_cards.models import Card
 
 
 class TarotDayCardView(TitleMixin, TemplateView):
-    """Displaying """
+    """Displays the welcome text of the Tarot Card of the Day"""
     template_name = 'tarot_devinations/tarot_day_card_view.html'
     title = 'Онлайн гадание Карта Дня Таро'
 
 
 class CardOfDayView(DetailView):
+    """Displays the Tarot card of the day"""
     model = Card
     template_name = 'tarot_devinations/tarot_day_card_detail.html'
 
@@ -32,12 +32,13 @@ class CardOfDayView(DetailView):
 
 
 class TarotThreeCardsView(TitleMixin, TemplateView):
-    """"""
+    """Displays the welcome text of the Three Tarot card divination"""
     template_name = 'tarot_devinations/tarot_three_cards_view.html'
     title = 'Онлайн гадание Три Карты'
 
 
 class ThreeTarotCardsList(ListView):
+    """Displays three Tarot cards"""
     template_name = 'tarot_devinations/tarot_three_cards_detail.html'
     model = Card
 
@@ -58,3 +59,25 @@ class ThreeTarotCardsList(ListView):
         context['cards_data'] = cards_data
         return context
 
+
+class YesOrNoTarotView(TitleMixin, TemplateView):
+    """Displays the welcome text of the Yes or No divination"""
+    template_name = 'tarot_devinations/yes_or_no_card_view.html'
+    title = 'Онлайн гадание Да или Нет'
+
+
+class YesOrNoTarotDetail(DetailView):
+    """Displays Yes or No divination"""
+    model = Card
+    template_name = 'tarot_devinations/yes_or_no_card_detail.html'
+
+    def get_object(self, queryset=None):
+        """Sort the objects randomly and take the first object"""
+        return self.get_queryset().order_by('?').first()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['name'] = self.object.name
+        context['image'] = self.object.image_1
+        context['yes_or_no'] = self.object.yes_no
+        return context
