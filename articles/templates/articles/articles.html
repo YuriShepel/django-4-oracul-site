@@ -53,6 +53,29 @@
             </div>
         </div>
 
+    {% if is_paginated %}
+    <nav class="pagination justify-content-center mb-4 mt-4">
+        <ul>
+            {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a></li>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="active"><span>{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li><a href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}">Следующая</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}
+
+
+
+
         <div class="row justify-content-center bottom-image">
             <div class="col-4 pb-1 pt-1">
                 <div class="image-block text-center">

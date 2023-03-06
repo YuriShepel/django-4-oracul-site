@@ -38,6 +38,7 @@ body {
     animation: rotateHue 4s alternate infinite;
 }
 
+
 @keyframes rotateHue {
     to {
         filter: hue-rotate(1turn);
@@ -297,4 +298,41 @@ table .tag-text {
     font-weight: 900;
 }
 
-/*taro_day_card-detail.html css*/
+/*pagination*/
+.pagination li{
+  display: inline-flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li a,
+.pagination li span {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #0a0a0a;
+  background-color: #90a8bd;
+  border: 1px solid #90a8bd;
+  border-radius: 3px;
+}
+
+.pagination li.active span {
+  font-weight: bold;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+
+/*.pagination li.active span {*/
+/*  font-weight: bold;*/
+/*  color: #fff;*/
+/*  border-color: #337ab7;*/
+/*}*/
