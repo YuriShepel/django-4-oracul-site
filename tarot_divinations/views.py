@@ -1,4 +1,3 @@
-
 from random import sample
 
 from django.views.generic import DetailView, TemplateView
@@ -80,4 +79,30 @@ class YesOrNoTarotDetail(DetailView):
         context['name'] = self.object.name
         context['image'] = self.object.image_1
         context['yes_or_no'] = self.object.yes_no
+        return context
+
+
+class LoveSituationTarotView(TitleMixin, TemplateView):
+    """Displays the welcome text of the Love Situation divination"""
+    template_name = 'tarot_devinations/tarot_love_situation_view.html'
+    title = 'Онлайн гадание Любовная ситуация'
+
+
+class LoveSituationTarotDetail(DetailView):
+    """Displays Love Situation divination"""
+    model = Card
+    template_name = 'tarot_devinations/tarot_love_situation_detail.html'
+
+    def get_object(self, queryset=None):
+        """Sort the objects randomly and take the first object"""
+        return self.get_queryset().order_by('?').first()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['name'] = self.object.name
+        context['image'] = self.object.image_1
+        context['love_up'] = self.object.love_up
+        context['love_down'] = self.object.love_down
+        context['seo_description'] = self.object.seo_description
+        context['seo_key_words'] = self.object.seo_key_words
         return context

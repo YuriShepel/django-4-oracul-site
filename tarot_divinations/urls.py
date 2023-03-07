@@ -12,4 +12,6 @@ urlpatterns = [
     path('three_tarot_cards/', views.ThreeTarotCardsList.as_view(), name='three_tarot_cards'),
     path('yes_or_no_tarot_divination/', views.YesOrNoTarotView.as_view(), name='yes_or_no_tarot_view'),
     path('yes_or_no_tarot/', views.YesOrNoTarotDetail.as_view(), name='yes_or_no_tarot'),
+    path('love_situation_tarot_divination/', views.LoveSituationTarotView.as_view(), name='love_situation_tarot_view'),
+    path('love_situation_tarot/', views.LoveSituationTarotDetail.as_view(), name='love_situation_tarot'),
 ]

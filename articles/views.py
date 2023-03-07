@@ -1,5 +1,5 @@
+from django.core.paginator import EmptyPage, Paginator
 from django.views.generic import DetailView, ListView
-from django.core.paginator import Paginator, EmptyPage
 
 from common_segments.common.mixins import TitleMixin
 

@@ -3,10 +3,10 @@
 
 {% block seo %}
     <meta name="description"
-          content="{{ name }}"/>
+          content="{{ seo_description }}"/>
     <meta
             name="keywords"
-            content="Карта дня Таро, Гадание Таро онлайн, Таро на каждый день, Мудрые слова, Инсайты и подсказки"/>
+            content="{{ seo_key_words }}"/>
 {% endblock %}
 
 {% block title %}
@@ -19,7 +19,7 @@
         <div class="row day-card">
             <div class="col">
                 <div class="text-center mb-4">
-                    <h1>Ваша карта дня:</h1>
+                    <h1>Ситуацию в любви описывает карта:</h1>
                     <h3 style="color: white">{{ name }}</h3>
                 </div>
             </div>
@@ -34,20 +34,21 @@
             </div>
             <div class="col-10">
                 <div class="mb-4">
-
-                    <p>{{ day_card_text }}</p>
-                    <p>{{ day_card_advice }}</p>
+                    <p style="color: white">Ситуация первая:</p>
+                    <p>{{ love_up }}</p>
+                    <hr>
+                    <p style="color: white">Альтернативная ситуация:</p>
+                    <p>{{ love_down }}</p>
                 </div>
             </div>
         </div>
-    <hr>
+        <hr>
         <div class="row justify-content-center">
             <div class="col-4 pt-3 pb-3">
                 <div class="image-block">
                     <img
-                            src="{% static 'images/day_card.jpg' %}"
-                            alt="Карта дня"
-                    />
+                            src="{% static 'images/common_love_situation.jpg' %}"
+                            alt="Man and Woman"
                 </div>
             </div>
         </div>
