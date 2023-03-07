@@ -3,7 +3,7 @@ from random import sample
 from django.views.generic import DetailView, TemplateView
 from django.views.generic.list import ListView
 
-from common_segments.common.mixins import TitleMixin
+from common_segments.common.mixins import TitleMixin, TarotMixin
 from tarot_cards.models import Card
 
 
@@ -13,18 +13,12 @@ class TarotDayCardView(TitleMixin, TemplateView):
     title = 'Онлайн гадание Карта Дня Таро'
 
 
-class CardOfDayView(DetailView):
+class CardOfDayView(TarotMixin, DetailView):
     """Displays the Tarot card of the day"""
-    model = Card
     template_name = 'tarot_devinations/tarot_day_card_detail.html'
-
-    def get_object(self, queryset=None):
-        return self.get_queryset().order_by('?').first()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['name'] = self.object.name
-        context['image'] = self.object.image_1
         context['day_card_text'] = self.object.card_of_day
         context['day_card_advice'] = self.object.card_advice
         return context
@@ -65,19 +59,12 @@ class YesOrNoTarotView(TitleMixin, TemplateView):
     title = 'Онлайн гадание Да или Нет'
 
 
-class YesOrNoTarotDetail(DetailView):
+class YesOrNoTarotDetail(TarotMixin, DetailView):
     """Displays Yes or No divination"""
-    model = Card
     template_name = 'tarot_devinations/yes_or_no_card_detail.html'
-
-    def get_object(self, queryset=None):
-        """Sort the objects randomly and take the first object"""
-        return self.get_queryset().order_by('?').first()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['name'] = self.object.name
-        context['image'] = self.object.image_1
         context['yes_or_no'] = self.object.yes_no
         return context
 
@@ -88,21 +75,29 @@ class LoveSituationTarotView(TitleMixin, TemplateView):
     title = 'Онлайн гадание Любовная ситуация'
 
 
-class LoveSituationTarotDetail(DetailView):
+class LoveSituationTarotDetail(TarotMixin, DetailView):
     """Displays Love Situation divination"""
-    model = Card
     template_name = 'tarot_devinations/tarot_love_situation_detail.html'
-
-    def get_object(self, queryset=None):
-        """Sort the objects randomly and take the first object"""
-        return self.get_queryset().order_by('?').first()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['name'] = self.object.name
-        context['image'] = self.object.image_1
         context['love_up'] = self.object.love_up
         context['love_down'] = self.object.love_down
-        context['seo_description'] = self.object.seo_description
-        context['seo_key_words'] = self.object.seo_key_words
+        return context
+
+
+class CareerSituationTarotView(TitleMixin, TemplateView):
+    """Displays the welcome text of the Love Situation divination"""
+    template_name = 'tarot_devinations/tarot_career_situation_view.html'
+    title = 'Онлайн гадание Ситуация на работе'
+
+
+class CareerSituationTarotDetail(TarotMixin, DetailView):
+    """Displays Love Situation divination"""
+    template_name = 'tarot_devinations/tarot_career_situation_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['career_up'] = self.object.career_up
+        context['career_down'] = self.object.career_down
         return context

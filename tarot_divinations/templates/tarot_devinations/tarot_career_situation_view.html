@@ -3,10 +3,10 @@
 
 {% block seo %}
     <meta name="description"
-          content="Ищете ответы на вопросы о своих отношениях? Онлайн гадание на картах таро поможет разобраться в сложной ситуации в любви. Попробуйте наши гадания на картах таро прямо сейчас и начните свой путь к пониманию своих чувств и отношений."/>
+          content="Получите предсказания относительно вашей текущей ситуации на работе и возможных действий для достижения успеха с помощью нашего онлайн гадания на картах Таро. Задайте вопрос и выберите карты Таро, чтобы получить свой результат.."/>
     <meta
             name="keywords"
-            content="Таро, Гадание, Любовь, Отношения, Онлайн гадание"/>
+            content="Таро, Гадание, Ситуация на работе, Работа, Онлайн гадание"/>
 {% endblock %}
 
 {% block title %}
@@ -19,7 +19,7 @@
         <div class="row proposition-text">
             <div class="col">
                 <div class="text-center mb-4">
-                    <h1 style="color: white">Онлайн гадание на ситуацию в любви</h1>
+                    <h1 style="color: white">Онлайн гадание Ситуация на работе</h1>
                 </div>
             </div>
         </div>
@@ -28,14 +28,16 @@
             <div class="col">
                 <div class="mb-4">
                     <p class="mb-2">
-                        Добро пожаловать на нашу страницу онлайн-гадания Ситуация в любви!
+                        Добро пожаловать на нашу онлайн платформу гадания на картах Таро!
                     </p>
                     <p class="mb-2">
-                        Если вы ищете ответы на вопросы о своих отношениях, то вы попали в нужное место.
-                        Наше онлайн гадание поможет вам разобраться в сложной ситуации в любви и даст совет.
+                        Если вы ищете ответы на свои вопросы о работе, то вы попали по адресу.
+                        Наша система гадания поможет вам получить предсказания относительно вашей текущей ситуации на
+                        работе и возможных действий для достижения успеха.
                     </p>
                     <p class="mb-2">
-                        Просто задайте свой вопрос и нажмите ГАДАТЬ.
+                        Просто задайте вопрос и нажмите ГАДАТЬ, чтобы получить ответы на свои вопросы о работе прямо
+                        сейчас.
                     </p>
                 </div>
             </div>
@@ -54,16 +56,16 @@
                 <div class="card text-center mb-3">
                     <div class="card-image">
                         <a href="
-                    {% url 'tarot_devinations:love_situation_tarot' %}">
+                    {% url 'tarot_devinations:career_situation_tarot' %}">
                             <img
-                                    src=" {% static 'images/revers_love_situation.jpg' %} "
+                                    src=" {% static 'images/revers_career_situation.jpg' %} "
                                     class="card-img-top mx-auto d-block text-center"
                                     alt="Major Arcana"
                             />
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="{% url 'tarot_devinations:love_situation_tarot' %}" class="btn btn-primary card-button"
+                        <a href="{% url 'tarot_devinations:career_situation_tarot' %}" class="btn btn-primary card-button"
                         >Гадать</a
                         >
                     </div>
@@ -76,7 +78,7 @@
             <div class="col-4 pt-3 pb-3">
                 <div class="image-block">
                     <img
-                            src="{% static 'images/common_love_situation.jpg' %}"
+                            src="{% static 'images/common_career_situation.jpg' %}"
                             alt="Man and Women"
                     />
                 </div>
