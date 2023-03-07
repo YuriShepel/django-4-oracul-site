@@ -20,6 +20,9 @@ env = environ.Env(
     SECRET_KEY=str,
     DOMAIN_NAME=str,
 
+    REDIS_HOST=str,
+    REDIS_PORT=str,
+
     DATABASE_NAME=str,
     DATABASE_USER=str,
     DATABASE_PASSWORD=str,
@@ -111,10 +114,15 @@ INTERNAL_IPS = [
     'localhost',
 ]
 
+# Redis data
+REDIS_HOST = env('REDIS_HOST')
+REDIS_PORT = env('REDIS_PORT')
+
+# Caches
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379',
+        'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}',
     }
 }
 
