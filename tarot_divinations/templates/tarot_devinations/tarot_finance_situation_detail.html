@@ -1,0 +1,57 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="{{ seo_description }}"/>
+    <meta
+            name="keywords"
+            content="{{ seo_key_words }}"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ name }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row day-card">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <h1>Ситуацию с финансами описывает карта:</h1>
+                    <h3 style="color: white">{{ name }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text mb-4">
+            <div class="col-2 image-block">
+                <img
+                        src="{{ image.url }}" width="150"
+                        alt="{{ name }}"
+                />
+            </div>
+            <div class="col-10">
+                <div class="mb-4">
+                    <p style="color: white">Ситуация первая:</p>
+                    <p>{{ finance_up }}</p>
+                    <hr>
+                    <p style="color: white">Альтернативная ситуация:</p>
+                    <p>{{ finance_down }}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/common_finance_situation.jpg' %}"
+                            alt="Woman with money"
+                            />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

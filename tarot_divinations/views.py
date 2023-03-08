@@ -87,17 +87,34 @@ class LoveSituationTarotDetail(TarotMixin, DetailView):
 
 
 class CareerSituationTarotView(TitleMixin, TemplateView):
-    """Displays the welcome text of the Love Situation divination"""
+    """Displays the welcome text of the Career Situation divination"""
     template_name = 'tarot_devinations/tarot_career_situation_view.html'
     title = 'Онлайн гадание Ситуация на работе'
 
 
 class CareerSituationTarotDetail(TarotMixin, DetailView):
-    """Displays Love Situation divination"""
+    """Displays Career Situation divination"""
     template_name = 'tarot_devinations/tarot_career_situation_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['career_up'] = self.object.career_up
         context['career_down'] = self.object.career_down
+        return context
+
+
+class FinanceSituationTarotView(TitleMixin, TemplateView):
+    """Displays the welcome text of the Finance Situation divination"""
+    template_name = 'tarot_devinations/tarot_finance_situation_view.html'
+    title = 'Онлайн гадание Ситуация c Деньгами'
+
+
+class FinanceSituationTarotDetail(TarotMixin, DetailView):
+    """Displays Finance Situation divination"""
+    template_name = 'tarot_devinations/tarot_finance_situation_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['finance_up'] = self.object.finance_up
+        context['finance_down'] = self.object.finance_down
         return context

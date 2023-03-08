@@ -16,4 +16,7 @@ urlpatterns = [
     path('career_situation_tarot_divination/', views.CareerSituationTarotView.as_view(),
          name='career_situation_tarot_view'),
     path('career_situation_tarot/', views.CareerSituationTarotDetail.as_view(), name='career_situation_tarot'),
+    path('finance_situation_tarot_divination/', views.FinanceSituationTarotView.as_view(),
+         name='finance_situation_tarot_view'),
+    path('finance_situation_tarot/', views.FinanceSituationTarotDetail.as_view(), name='finance_situation_tarot'),
 ]
