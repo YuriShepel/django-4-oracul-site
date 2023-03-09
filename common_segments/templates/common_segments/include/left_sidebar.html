@@ -2,7 +2,7 @@
 
 <div class="left-navbar col-lg-2 col-md-12">
     <a href="#">
-        <h4 class="d-flex align-items-center">Онлайн гадания</h4>
+        <h4 class="d-flex align-items-center">Гадания онлайн</h4>
     </a>
     <nav class="menu">
         <ul>
@@ -27,11 +27,21 @@
             <li>
                 <a href="{% url 'quotes_divination:category_quotes_list' %}">Гадание по цитатам</a>
             </li>
+
+        </ul>
+    </nav>
+
+    <a href="#">
+        <h4 class="d-flex align-items-center">Тайна человека</h4>
+    </a>
+    <nav class="menu">
+        <ul>
             <li>
-                <a href="{% url 'tarot_devinations:color_description' %}">Описание по цвету</a>
+                <a href="{% url 'person_characteristic:color_description' %}">Описание по любимому цвету</a>
             </li>
         </ul>
     </nav>
+
     <a href="{% url 'tarot_cards:tarot_suits' %}">
         <h4 class="d-flex align-items-center">Справочник таро</h4>
     </a>

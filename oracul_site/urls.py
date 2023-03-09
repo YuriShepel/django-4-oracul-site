@@ -27,7 +27,7 @@ urlpatterns = [
     path('articles/', include('articles.urls', namespace='articles')),
     path('tarot_divinations/', include('tarot_divinations.urls', namespace='tarot_divinations')),
     path('quotes_divination/', include('quotes_divination.urls', namespace='quotes_divination')),
-    path('person/', include('person.urls', namespace='person')),
+    path('person/', include('person_characteristic.urls', namespace='person_characteristic')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
 
