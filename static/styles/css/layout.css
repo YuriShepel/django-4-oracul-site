@@ -47,6 +47,12 @@ main {
   display: block;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: #75a178;
+}
+
 h1,
 h2,
 h3,
@@ -57,7 +63,7 @@ p {
   font-size: inherit;
   font-weight: inherit;
 }
-
+hr,
 h1,
 h2,
 h3,

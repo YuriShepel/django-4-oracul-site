@@ -220,6 +220,12 @@ footer {
     transform: scale(1.1);
 }
 
+.btn{
+    font-size: 15px;
+}
+
+
+
 .card-button:hover {
     transition: transform 0.6s;
     transform: scale(1.1);
