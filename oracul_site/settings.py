@@ -66,6 +66,8 @@ INSTALLED_APPS = [
     'tarot_divinations',
     'quotes_divination',
     'common_segments',
+    'person_characteristic',
+
 
     # installed tools
     'ckeditor',

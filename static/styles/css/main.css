@@ -46,7 +46,6 @@ body {
 }
 
 
-
 /* left navbar css */
 .main-section {
     margin-top: 15px;
@@ -121,6 +120,9 @@ img {
     color: aqua;
     background: linear-gradient(270deg, #00009c 0%, #000000 100%);
 }
+
+
+
 
 /* article block css */
 .right-sidebar {
@@ -275,7 +277,7 @@ table .tag-text {
     font-weight: 900;
 }
 
-.article p{
+.article p {
     font-size: 18px;
     margin-bottom: 30px;
 }
@@ -289,7 +291,7 @@ table .tag-text {
 }
 
 /*article_detail.html css*/
-.article-detail-title{
+.article-detail-title {
     font-size: 25px;
     color: #00e9cf;
 }
@@ -299,40 +301,45 @@ table .tag-text {
 }
 
 /*pagination*/
-.pagination li{
-  display: inline-flex;
-  list-style: none;
-  justify-content: center;
+.pagination li {
+    display: inline-flex;
+    list-style: none;
+    justify-content: center;
 }
 
 .pagination li {
-  margin: 0 5px;
+    margin: 0 5px;
 }
+
 .pagination li {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 .pagination li a,
 .pagination li span {
-  display: block;
-  padding: 5px 10px;
-  text-decoration: none;
-  color: #0a0a0a;
-  background-color: #90a8bd;
-  border: 1px solid #90a8bd;
-  border-radius: 3px;
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #0a0a0a;
+    background-color: #90a8bd;
+    border: 1px solid #90a8bd;
+    border-radius: 3px;
 }
 
 .pagination li.active span {
-  font-weight: bold;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
+    font-weight: bold;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
 }
 
+/*colors page*/
 
-/*.pagination li.active span {*/
-/*  font-weight: bold;*/
-/*  color: #fff;*/
-/*  border-color: #337ab7;*/
-/*}*/
+.color-container {
+    height: 100px;
+}
+
+.color-block {
+    width: 100%;
+    height: 100%
+}

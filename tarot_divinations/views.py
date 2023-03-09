@@ -118,3 +118,9 @@ class FinanceSituationTarotDetail(TarotMixin, DetailView):
         context['finance_up'] = self.object.finance_up
         context['finance_down'] = self.object.finance_down
         return context
+
+
+class ColorDescriptionView(TitleMixin, TemplateView):
+    """Displays the welcome text of the Finance Situation divination"""
+    template_name = 'tarot_devinations/color_description_view.html'
+    title = 'Описание человека по любимому цвету'

@@ -15,7 +15,7 @@
             <li>
                 <a href="{% url 'tarot_devinations:career_situation_tarot_view' %}">Cитуация на работе</a>
             </li>
-                        <li>
+            <li>
                 <a href="{% url 'tarot_devinations:finance_situation_tarot_view' %}">Cитуация с деньгами</a>
             </li>
             <li>
@@ -27,6 +27,9 @@
             <li>
                 <a href="{% url 'quotes_divination:category_quotes_list' %}">Гадание по цитатам</a>
             </li>
+            <li>
+                <a href="{% url 'tarot_devinations:color_description' %}">Описание по цвету</a>
+            </li>
         </ul>
     </nav>
     <a href="{% url 'tarot_cards:tarot_suits' %}">
@@ -37,7 +40,7 @@
             {% get_suits as suits %}
             {% for suit in suits %}
                 <li>
-                <a href="{% url 'tarot_cards:cards_list' suit.url %} "> {{ suit.suits_name }} </a>
+                    <a href="{% url 'tarot_cards:cards_list' suit.url %} "> {{ suit.suits_name }} </a>
                 </li>
             {% endfor %}
         </ul>
