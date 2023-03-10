@@ -1,10 +1,11 @@
-from django.contrib import admin
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
-from .models import ColorCharacter
+from django.contrib import admin
+
+from .models import ColorCharacter, WeekDayCharacter
 
 
-class ColorCharacterAdminForm(forms.ModelForm):
+class CharacterAdminForm(forms.ModelForm):
     text = forms.CharField(widget=CKEditorUploadingWidget())
 
     class Meta:
@@ -12,12 +13,11 @@ class ColorCharacterAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
-@admin.register(ColorCharacter)
-class ColorCharacterAdmin(admin.ModelAdmin):
+class BaseCharacterAdmin(admin.ModelAdmin):
     list_display = ('name', 'moderation')
     list_filter = ('moderation',)
     search_fields = ('name',)
-    form = ColorCharacterAdminForm
+    form = CharacterAdminForm
 
     fieldsets = (
         ('Основные параметры', {
@@ -30,3 +30,13 @@ class ColorCharacterAdmin(admin.ModelAdmin):
             'fields': ('url', 'moderation'), 'classes': ['wide']
         }),
     )
+
+
+@admin.register(ColorCharacter)
+class ColorCharacterAdmin(BaseCharacterAdmin):
+    pass
+
+
+@admin.register(WeekDayCharacter)
+class WeekDayCharacterAdmin(BaseCharacterAdmin):
+    pass

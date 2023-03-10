@@ -1,4 +1,5 @@
-from tarot_cards.models import TarotSuits, Card
+from tarot_cards.models import Card, TarotSuits
+
 
 
 class TitleMixin:

@@ -3,7 +3,7 @@ from random import sample
 from django.views.generic import DetailView, TemplateView
 from django.views.generic.list import ListView
 
-from common_segments.common.mixins import TitleMixin, TarotMixin
+from common_segments.common.mixins import TarotMixin, TitleMixin
 from tarot_cards.models import Card
 
 
