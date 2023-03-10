@@ -31,8 +31,9 @@ class ColorDescriptionDetailView(DetailView):
     slug_field = 'url'
 
 
-class WeekDayDescriptionView(TemplateView):
+class WeekDayDescriptionView(TitleMixin, TemplateView):
     template_name = 'person_characteristic/week_day_description_view.html'
+    title = 'Описание человека по дню рождения'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -51,22 +52,23 @@ class WeekDayDescriptionView(TemplateView):
         else:
             return self.render_to_response({'form': form})
 
-# class WeekDayDescriptionListView(TitleMixin, ListView):
-#     """Displays the welcome text of the Color characteristic"""
-#     model = WeekDayCharacter
-#     context_object_name = 'days'
-#     template_name = 'person_characteristic/week_day_description_view.html'
-#     title = 'Описание человека по дню недели'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(WeekDayDescriptionListView, self).get_context_data()
-#         days = WeekDayCharacter.objects.all().order_by('id')
-#         context['days'] = days
-#         return context
+
+class WeekDayDescriptionDetailView(DetailView):
+    model = WeekDayCharacter
+    context_object_name = 'day'
+    template_name = 'person_characteristic/week_day_description_detail.html'
+    slug_field = 'url'
 
 
-# class WeekDayDescriptionDetailView(DetailView):
-#     model = ColorCharacter
-#     context_object_name = 'color'
-#     template_name = 'person_characteristic/color_description_detail.html'
-#     slug_field = 'url'
+
+
+
+
+
+
+
+
+
+
+
+

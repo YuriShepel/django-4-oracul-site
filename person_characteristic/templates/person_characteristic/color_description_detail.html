@@ -1,0 +1,62 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="{{ color.seo_description }}"/>
+    <meta
+            name="keywords"
+            content="цветовая психология, личность, психология цвета, любимый цвет, характеристика личности"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ color.name }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <h1 style="color: white">Вы выбрали <span
+                            style="color: {{ color.color_code }};">{{ color.name }}</span> цвет</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text mb-4">
+            <div class="col">
+                <div class="mb-4">
+                    <p class="mb-4">
+                        Человеку, которому нравится {{ color.name }} цвет, можно приписать следующие характеристики:
+                    </p>
+                    <p class="mb-2">
+                        {{ color.text | safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2 mt-2 justify-content-center">
+            <div class="col-4 suits-info-text">
+                <div class="text-center mb-4 mt-4">
+                    <a href="{% url 'person_characteristic:color_description' %}"><p>Назад</p></a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row justify-content-center bottom-block">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/common_color.jpg' %}"
+                            alt="Colors of the rainbow"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

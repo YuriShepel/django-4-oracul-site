@@ -1,0 +1,91 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="Узнайте характеристики своей личности, выбрав свой любимый цвет. На нашей веб-странице представлены увлекательные факты о том, как цвета могут отражать нашу индивидуальность."/>
+    <meta
+            name="keywords"
+            content="цветовая психология, личность, психология цвета, любимый цвет, характеристика личности"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <h1 style="color: white">Описание человека по дню недели, в который он родился</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="mb-4">
+                    <p class="mb-2">
+                        Добро пожаловать на нашу страницу, где вы можете узнать интересные факты о своей личности,
+                        основанные на дне недели, в который вы родились!
+                    </p>
+                    <p class="mb-2">
+                        Выберите день недели своего рождения и получите уникальную характеристику, которая может помочь
+                        вам лучше понять себя и свои качества. Надеемся, что наше предложение позволит вам узнать о себе
+                        что-то новое и увлекательное.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6 mt-2">
+                <h1 class="mb-2"> Узнать в какой день недели вы родились очень просто. Выберите дату ниже и получите
+                    ответ.</h1>
+                <div class="col-5 mb-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input class="mt-2" type="submit" value="">
+                    </form>
+                </div>
+                <div class="col-12 mb-4">
+                    {% if day_of_week %}
+                        <p>День недели, в который вы родились: <span
+                                style="color: white; font-size: 30px">{{ day_of_week }}</span></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center text-center">
+            {% for day in days %}
+                <div class="col-lg-3 col-md-6 color-container mb-4">
+                    <div class="color-block ">
+                        <a href="{% url 'person_characteristic:day_detail' day.url %}">
+                            <div class="d-flex align-items-center justify-content-center color-block"
+                                 style="background-color: {{ day.color_code }};">
+                                <p style="color: black;">{{ day.name }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <hr>
+        <div class="row justify-content-center bottom-block">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/common_week_day.jpg' %}"
+                            alt="Two women"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
