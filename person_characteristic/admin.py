@@ -2,7 +2,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 from django.contrib import admin
 
-from .models import ColorCharacter, WeekDayCharacter
+from .models import ColorCharacter, WeekDayCharacter, MonthDayCharacter
 
 
 class CharacterAdminForm(forms.ModelForm):
@@ -39,4 +39,9 @@ class ColorCharacterAdmin(BaseCharacterAdmin):
 
 @admin.register(WeekDayCharacter)
 class WeekDayCharacterAdmin(BaseCharacterAdmin):
+    pass
+
+
+@admin.register(MonthDayCharacter)
+class MonthDayCharacterAdmin(BaseCharacterAdmin):
     pass
