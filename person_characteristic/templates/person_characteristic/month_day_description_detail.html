@@ -19,8 +19,8 @@
         <div class="row proposition-text">
             <div class="col">
                 <div class="text-center mb-4">
-                    <h1 style="color: white">Описание человека, родившегося в день недели >>> <span
-                            style="color: {{ day.color_code }};">{{ day.name }}</span> </h1>
+                    <h1 style="color: white">Описание человека, родившегося <span
+                            style="color: {{ day.color_code }};">{{ day_number.name }}</span> числа: </h1>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
         <div class="row mb-2 mt-2 justify-content-center">
             <div class="col-4 suits-info-text">
                 <div class="text-center mb-4 mt-4">
-                    <a href="{% url 'person_characteristic:birthday' %}"><p>Назад</p></a>
+                    <a href="{% url 'person_characteristic:month_day_description' %}"><p>Назад</p></a>
                 </div>
             </div>
         </div>
