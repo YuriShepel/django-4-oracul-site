@@ -14,7 +14,7 @@ class BaseCharacter(models.Model):
         abstract = True
 
     def __str__(self):
-        return f'{self.name} | {self.moderation} | {self.id}'
+        return f'{self.name} | {self.moderation}'
 
 
 class ColorCharacter(BaseCharacter):

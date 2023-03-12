@@ -189,5 +189,5 @@ source/files
 source/images
 
 
-add_script.py
-add_to_db.py
+Scripts/add_script.py
+Scripts/add_to_db.py

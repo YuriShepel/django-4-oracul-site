@@ -74,12 +74,8 @@ class MonthDayDescriptionListView(TitleMixin, ListView):
         return context
 
 
-
-
-
-
-
-
-
-
-
+class MonthDayDescriptionDetailView(DetailView):
+    model = MonthDayCharacter
+    context_object_name = 'day_number'
+    template_name = 'person_characteristic/month_day_description_detail.html'
+    slug_field = 'url'
