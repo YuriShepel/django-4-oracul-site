@@ -32,6 +32,7 @@ ___
 ![](https://www.vectorlogo.zone/logos/python/python-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/postgresql/postgresql-ar21.svg)
+![](https://www.vectorlogo.zone/logos/redis/redis-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/netlifyapp_watercss/netlifyapp_watercss-ar21.svg)
