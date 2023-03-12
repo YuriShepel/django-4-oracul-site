@@ -14,7 +14,7 @@ class BaseCharacter(models.Model):
         abstract = True
 
     def __str__(self):
-        return f'{self.name} | {self.moderation}'
+        return f'{self.name} | {self.moderation} | {self.id}'
 
 
 class ColorCharacter(BaseCharacter):
@@ -33,3 +33,4 @@ class MonthDayCharacter(BaseCharacter):
     class Meta:
         verbose_name = 'День месяца'
         verbose_name_plural = 'Дни месяца'
+

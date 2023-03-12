@@ -7,7 +7,7 @@ from django.views.generic import DetailView, ListView, TemplateView
 from common_segments.common.mixins import TitleMixin
 
 from .forms import BirthdayForm
-from .models import ColorCharacter, WeekDayCharacter
+from .models import ColorCharacter, WeekDayCharacter, MonthDayCharacter
 
 
 class ColorDescriptionListView(TitleMixin, ListView):
@@ -60,7 +60,18 @@ class WeekDayDescriptionDetailView(DetailView):
     slug_field = 'url'
 
 
+class MonthDayDescriptionListView(TitleMixin, ListView):
+    """Displays the welcome text of the Month Day characteristic"""
+    model = MonthDayCharacter
+    context_object_name = 'day_numbers'
+    template_name = 'person_characteristic/month_day_description_view.html'
+    title = 'Описание человека по числу дня рождения'
 
+    def get_context_data(self, **kwargs):
+        context = super(MonthDayDescriptionListView, self).get_context_data()
+        day_numbers = MonthDayCharacter.objects.all().order_by('id')
+        context['day_numbers'] = day_numbers
+        return context
 
 
 

@@ -187,3 +187,7 @@ Scripts/
 # project files
 source/files
 source/images
+
+
+add_script.py
+add_to_db.py

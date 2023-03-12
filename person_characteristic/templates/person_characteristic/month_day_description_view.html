@@ -1,0 +1,84 @@
+{% extends 'common_segments/base.html' %}
+{% load static %}
+
+{% block seo %}
+    <meta name="description"
+          content="Узнайте характеристики своей личности, выбрав свой любимый цвет. На нашей веб-странице представлены увлекательные факты о том, как цвета могут отражать нашу индивидуальность."/>
+    <meta
+            name="keywords"
+            content="цветовая психология, личность, психология цвета, любимый цвет, характеристика личности"/>
+{% endblock %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <!-- central content block -->
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <h1 style="color: white">Описание человека по любимому цвету</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="mb-4">
+                    <p class="mb-2">
+                        Добро пожаловать на нашу веб-страницу!
+                    </p>
+                    <p class="mb-2">
+                        Здесь вы можете узнать интересные факты о себе, просто выбрав свой любимый цвет. Как известно,
+                        цвета имеют большое значение в нашей жизни и могут многое рассказать о нашей личности. Мы рады
+                        помочь вам раскрыть тайны своей индивидуальности и узнать что-то новое о себе.
+                    </p>
+                    <p class="mb-2">
+                        Так что выбирайте свой любимый цвет и погрузитесь в мир удивительных открытий!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row proposition-text">
+            <div class="col">
+                <div class="text-center mb-4">
+                    <p style="color: white">Выберите число вашего рождения:</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+            {% for day in day_numbers %}
+                <div class="col-lg-1 col-md-6 color-container mb-4">
+                    <div class="color-block ">
+                        <a href="#">
+                            <div class="d-flex align-items-center justify-content-center color-block"
+                                 style="background-color: {{ day.color_code }};">
+                                <p style="color: black">{{ day.name }}</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+        <hr>
+        <div class="row justify-content-center bottom-block">
+
+            <div class="col-4 pt-3 pb-3">
+
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/common_month_day.jpg' %}"
+                            alt="Two men and a woman in a cafe"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
