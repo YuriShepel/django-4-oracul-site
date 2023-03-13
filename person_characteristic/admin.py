@@ -2,7 +2,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 from django.contrib import admin
 
-from .models import ColorCharacter, WeekDayCharacter, MonthDayCharacter
+from .models import ColorCharacter, MonthDayCharacter, WeekDayCharacter
 
 
 class CharacterAdminForm(forms.ModelForm):

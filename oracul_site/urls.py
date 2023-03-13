@@ -16,9 +16,40 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
 from common_segments.views import IndexView
+from common_segments.sitemaps import (ArticleSitemap,
+                                      TarotCardSitemap,
+                                      CardOfTheDayDivinationSitemap,
+                                      LoveSituationTarotDivinationSitemap,
+                                      CareerSituationTarotDivinationSitemap,
+                                      YesOrNoTarotDivinationSitemap,
+                                      FinanceSituationTarotDivinationSitemap,
+                                      ColorCharacterViewSitemap,
+                                      ColorCharacterSitemap,
+                                      BirthdayDescriptionViewSitemap,
+                                      BirthdayDescriptionSitemap,
+                                      MonthDayDescriptionViewSitemap,
+                                      MonthDayDescriptionSitemap,
+                                      )
+
+sitemaps = {
+    'articles': ArticleSitemap,
+    'tarot_cards': TarotCardSitemap,
+    'card_of_the_day_divination': CardOfTheDayDivinationSitemap,
+    'love_situation_tarot_divination': LoveSituationTarotDivinationSitemap,
+    'career_situation_tarot_divination': CareerSituationTarotDivinationSitemap,
+    'finance_situation_tarot_divination': FinanceSituationTarotDivinationSitemap,
+    'yes_or_no_tarot_divination': YesOrNoTarotDivinationSitemap,
+    'color_description_view': ColorCharacterViewSitemap,
+    'color_description': ColorCharacterSitemap,
+    'birthday_description_view': BirthdayDescriptionViewSitemap,
+    'birthday_description': BirthdayDescriptionSitemap,
+    'month_day_description': MonthDayDescriptionSitemap,
+    'month_day_description_view': MonthDayDescriptionViewSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,8 +59,9 @@ urlpatterns = [
     path('tarot_divinations/', include('tarot_divinations.urls', namespace='tarot_divinations')),
     path('quotes_divination/', include('quotes_divination.urls', namespace='quotes_divination')),
     path('person/', include('person_characteristic.urls', namespace='person_characteristic')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
 
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
 ]
 

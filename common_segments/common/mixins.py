@@ -1,7 +1,6 @@
 from tarot_cards.models import Card, TarotSuits
 
 
-
 class TitleMixin:
     title = None
 

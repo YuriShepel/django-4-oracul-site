@@ -7,7 +7,7 @@ from django.views.generic import DetailView, ListView, TemplateView
 from common_segments.common.mixins import TitleMixin
 
 from .forms import BirthdayForm
-from .models import ColorCharacter, WeekDayCharacter, MonthDayCharacter
+from .models import ColorCharacter, MonthDayCharacter, WeekDayCharacter
 
 
 class ColorDescriptionListView(TitleMixin, ListView):
