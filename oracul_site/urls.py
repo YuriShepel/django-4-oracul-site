@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
+from django.views.generic import TemplateView
 
 from common_segments.views import IndexView, AboutView, ContactsView, PrivacyPolicyView
 from common_segments.sitemaps import (
@@ -46,6 +47,7 @@ urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('contacts/', ContactsView.as_view(), name='contacts'),
     path('privacy_policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
+
     path('tarot_cards/', include('tarot_cards.urls', namespace='tarot_cards')),
     path('articles/', include('articles.urls', namespace='articles')),
     path('tarot_divinations/', include('tarot_divinations.urls', namespace='tarot_divinations')),
@@ -54,7 +56,7 @@ urlpatterns = [
 
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-
+    path('robots.txt/', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 
 if settings.DEBUG:
