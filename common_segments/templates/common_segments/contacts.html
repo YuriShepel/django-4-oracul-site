@@ -1,0 +1,51 @@
+{% extends 'common_segments/base.html' %} {% load static %} {% block seo %}
+    <meta
+            name="description"
+            content="На нашем сайте вы найдете онлайн гадания на любые темы, статьи о гадании на картах Таро, нумерологии, астрологии и других методах предсказаний. Узнайте, как использовать различные техники гадания, интерпретировать результаты и применять их в своей жизни. Наши статьи подходят как для начинающих, так и для опытных практиков. Откройте для себя мир гаданий и предсказаний прямо сейчас!"
+    />
+    <meta
+            name="keywords"
+            content="Таро, Колода таро, Описание карт, Символика таро, Гадание таро, Значение карт, Тайны таро, Справочник таро, Обучение таро"
+    />
+{% endblock %} {% block title %}
+    <title>{{ title }}</title>
+{% endblock %} {% block content %}
+    <div class="content-block col-lg-8 col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="image-block">
+                    <img
+                            class="title-image"
+                            src="{% static 'images/contacts.jpg' %}"
+                            class="rounded"
+                            alt="Девушка гадает"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="title-text text-center title-block">
+                    <h1 class="mb-2" style="color: white;">
+                        Здравствуйте! Мы рады приветствовать вас на странице контактов нашего сайта. Если у вас возникли
+                        вопросы, предложения или пожелания, мы всегда готовы помочь и ответить на них.
+                    </h1>
+
+                    <p>
+                        Для связи с нами вы можете использовать электронную почту: <blank style="color: white;">magiclair.site@gmail.com</blank>.
+                    </p>
+                    <p>
+                        Мы постараемся ответить вам в кратчайшие сроки и предоставить необходимую помощь и информацию.</p>
+                    <p>
+                        Также мы будем благодарны за обратную связь и отзывы о нашем сайте.
+                    </p>
+                    <p>
+                        С уважением, команда magiclair.pp.ua.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

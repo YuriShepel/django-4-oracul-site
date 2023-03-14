@@ -13,3 +13,9 @@ class AboutView(TitleMixin, TemplateView):
     """Displaying the about page of the site"""
     template_name = 'common_segments/about.html'
     title = 'О сайте'
+
+
+class ContactsView(TitleMixin, TemplateView):
+    """Displaying the contacts page of the site"""
+    template_name = 'common_segments/contacts.html'
+    title = 'Контакты сайта'
