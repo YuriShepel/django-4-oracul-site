@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
-from common_segments.views import IndexView
+from common_segments.views import IndexView, AboutView
 from common_segments.sitemaps import (
     StaticPagesSitemap,
     ArticleSitemap,
@@ -43,6 +43,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
+    path('about/', AboutView.as_view(), name='about'),
     path('tarot_cards/', include('tarot_cards.urls', namespace='tarot_cards')),
     path('articles/', include('articles.urls', namespace='articles')),
     path('tarot_divinations/', include('tarot_divinations.urls', namespace='tarot_divinations')),

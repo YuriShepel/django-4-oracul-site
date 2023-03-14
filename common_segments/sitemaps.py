@@ -41,6 +41,8 @@ class TarotCardSitemap(BaseStaticSitemap):
 class StaticPagesSitemap(BaseStaticSitemap):
     # Создаем словарь соответствия между элементами и их местоположениями
     ITEM_LOCATIONS = {
+        'index': '/',
+        'about': '/about/',
         'tarot_day_card_view': '/tarot_divinations/card_of_the_day_divination/',
         'love_situation_tarot_view': '/tarot_divinations/love_situation_tarot_divination/',
         'career_situation_tarot_view': '/tarot_divinations/career_situation_tarot_divination/',
