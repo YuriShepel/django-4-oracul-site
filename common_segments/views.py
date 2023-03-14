@@ -19,3 +19,9 @@ class ContactsView(TitleMixin, TemplateView):
     """Displaying the contacts page of the site"""
     template_name = 'common_segments/contacts.html'
     title = 'Контакты сайта'
+
+
+class PrivacyPolicyView(TitleMixin, TemplateView):
+    """Displaying the privacy policy page of the site"""
+    template_name = 'common_segments/privacy_policy.html'
+    title = 'Политика конфиденциальности'
