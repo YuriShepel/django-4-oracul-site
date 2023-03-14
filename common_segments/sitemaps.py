@@ -2,7 +2,7 @@ from django.contrib.sitemaps import Sitemap
 
 from articles.models import Article
 from person_characteristic.models import ColorCharacter, WeekDayCharacter, MonthDayCharacter
-from tarot_cards.models import Card
+from tarot_cards.models import Card, TarotSuits
 
 
 class BaseStaticSitemap(Sitemap):
@@ -21,6 +21,14 @@ class ArticleSitemap(Sitemap):
         return f'/articles/{obj.url}/'
 
 
+class SuitDescriptionSitemap(BaseStaticSitemap):
+    def items(self):
+        return TarotSuits.objects.all()
+
+    def location(self, obj):
+        return f'/tarot_cards/suit_description/{obj.url}/'
+
+
 class TarotCardSitemap(BaseStaticSitemap):
 
     def items(self):
@@ -30,49 +38,31 @@ class TarotCardSitemap(BaseStaticSitemap):
         return f'/tarot_cards/{obj.url}/'
 
 
-class CardOfTheDayDivinationSitemap(BaseStaticSitemap):
+class StaticPagesSitemap(BaseStaticSitemap):
+    # Создаем словарь соответствия между элементами и их местоположениями
+    ITEM_LOCATIONS = {
+        'tarot_day_card_view': '/tarot_divinations/card_of_the_day_divination/',
+        'love_situation_tarot_view': '/tarot_divinations/love_situation_tarot_divination/',
+        'career_situation_tarot_view': '/tarot_divinations/career_situation_tarot_divination/',
+        'finance_situation_tarot_view': '/tarot_divinations/finance_situation_tarot_divination/',
+        'yes_or_no_tarot_view': '/tarot_divinations/yes_or_no_tarot_divination/',
+        'tarot_three_cards_view': '/tarot_divinations/three_tarot_cards_divination/',
+        'category_quotes_list': '/quotes_divination/',
+
+        'color_description': '/person/color_description/',
+        'birthday': '/person/birthday_description/',
+        'month_day_description': '/person/month_day_description/',
+
+        'tarot_suits': '/tarot_cards/tarot_suits/',
+    }
 
     def items(self):
-        return ['tarot_day_card_view']
+        # Возвращаем список всех элементов
+        return list(self.ITEM_LOCATIONS.keys())
 
-    def location(self, item):
-        return '/tarot_divinations/card_of_the_day_divination/'
-
-
-class LoveSituationTarotDivinationSitemap(BaseStaticSitemap):
-
-    def items(self):
-        return ['love_situation_tarot_view']
-
-    def location(self, item):
-        return '/tarot_divinations/love_situation_tarot_divination/'
-
-
-class CareerSituationTarotDivinationSitemap(BaseStaticSitemap):
-
-    def items(self):
-        return ['career_situation_tarot_view']
-
-    def location(self, item):
-        return '/tarot_divinations/career_situation_tarot_divination/'
-
-
-class FinanceSituationTarotDivinationSitemap(BaseStaticSitemap):
-
-    def items(self):
-        return ['finance_situation_tarot_view']
-
-    def location(self, item):
-        return '/tarot_divinations/finance_situation_tarot_divination/'
-
-
-class YesOrNoTarotDivinationSitemap(BaseStaticSitemap):
-
-    def items(self):
-        return ['yes_or_no_tarot_view']
-
-    def location(self, item):
-        return '/tarot_divinations/yes_or_no_tarot_divination/'
+    def location(self, obj):
+        # Используем словарь для получения местоположения элемента
+        return self.ITEM_LOCATIONS[obj]
 
 
 class ColorCharacterSitemap(BaseStaticSitemap):
@@ -84,15 +74,6 @@ class ColorCharacterSitemap(BaseStaticSitemap):
         return f'/person/color_description/{obj.url}/'
 
 
-class ColorCharacterViewSitemap(BaseStaticSitemap):
-
-    def items(self):
-        return ['color_description']
-
-    def location(self, obj):
-        return f'/person/color_description/'
-
-
 class BirthdayDescriptionSitemap(BaseStaticSitemap):
 
     def items(self):
@@ -102,15 +83,6 @@ class BirthdayDescriptionSitemap(BaseStaticSitemap):
         return f'/person/birthday_description/{obj.url}/'
 
 
-class BirthdayDescriptionViewSitemap(BaseStaticSitemap):
-
-    def items(self):
-        return ['birthday']
-
-    def location(self, obj):
-        return f'/person/birthday_description/'
-
-
 class MonthDayDescriptionSitemap(BaseStaticSitemap):
 
     def items(self):
@@ -118,12 +90,3 @@ class MonthDayDescriptionSitemap(BaseStaticSitemap):
 
     def location(self, obj):
         return f'/person/month_day_description/{obj.url}/'
-
-
-class MonthDayDescriptionViewSitemap(BaseStaticSitemap):
-
-    def items(self):
-        return ['month_day_description']
-
-    def location(self, obj):
-        return f'/person/month_day_description/'

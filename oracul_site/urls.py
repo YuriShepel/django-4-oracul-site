@@ -20,35 +20,24 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
 from common_segments.views import IndexView
-from common_segments.sitemaps import (ArticleSitemap,
-                                      TarotCardSitemap,
-                                      CardOfTheDayDivinationSitemap,
-                                      LoveSituationTarotDivinationSitemap,
-                                      CareerSituationTarotDivinationSitemap,
-                                      YesOrNoTarotDivinationSitemap,
-                                      FinanceSituationTarotDivinationSitemap,
-                                      ColorCharacterViewSitemap,
-                                      ColorCharacterSitemap,
-                                      BirthdayDescriptionViewSitemap,
-                                      BirthdayDescriptionSitemap,
-                                      MonthDayDescriptionViewSitemap,
-                                      MonthDayDescriptionSitemap,
-                                      )
+from common_segments.sitemaps import (
+    StaticPagesSitemap,
+    ArticleSitemap,
+    TarotCardSitemap,
+    SuitDescriptionSitemap,
+    ColorCharacterSitemap,
+    BirthdayDescriptionSitemap,
+    MonthDayDescriptionSitemap,
+)
 
 sitemaps = {
+    'static': StaticPagesSitemap,
     'articles': ArticleSitemap,
     'tarot_cards': TarotCardSitemap,
-    'card_of_the_day_divination': CardOfTheDayDivinationSitemap,
-    'love_situation_tarot_divination': LoveSituationTarotDivinationSitemap,
-    'career_situation_tarot_divination': CareerSituationTarotDivinationSitemap,
-    'finance_situation_tarot_divination': FinanceSituationTarotDivinationSitemap,
-    'yes_or_no_tarot_divination': YesOrNoTarotDivinationSitemap,
-    'color_description_view': ColorCharacterViewSitemap,
+    'tarot_suits': SuitDescriptionSitemap,
     'color_description': ColorCharacterSitemap,
-    'birthday_description_view': BirthdayDescriptionViewSitemap,
     'birthday_description': BirthdayDescriptionSitemap,
     'month_day_description': MonthDayDescriptionSitemap,
-    'month_day_description_view': MonthDayDescriptionViewSitemap,
 }
 
 urlpatterns = [
