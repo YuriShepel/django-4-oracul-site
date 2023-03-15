@@ -27,7 +27,14 @@ env = environ.Env(
     DATABASE_USER=str,
     DATABASE_PASSWORD=str,
     DATABASE_HOST=str,
-    DATABASE_PORT=str
+    DATABASE_PORT=str,
+
+    EMAIL_BACKEND=str,
+    EMAIL_HOST=str,
+    EMAIL_PORT=int,
+    EMAIL_USE_TLS=bool,
+    EMAIL_HOST_USER=str,
+    EMAIL_HOST_PASSWORD=str,
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -196,3 +203,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # This setting specifies a relative path to CKEditor media upload directory
 # https://github.com/django-ckeditor/django-ckeditor#required-for-using-widget-with-file-upload
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+# Email sending
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
