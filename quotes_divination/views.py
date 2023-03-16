@@ -27,6 +27,7 @@ class RandomQuoteView(View):
             'quote': random_quote.quote,
             'autor': random_quote.author,
             'image': random_quote.category.image,
+            'image_alt': random_quote.category.image_alt,
             'title': 'Гадание по цитатам',
         }
         return render(request, 'quotes_divination/random_quote_view.html', context=context)

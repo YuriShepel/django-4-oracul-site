@@ -20,16 +20,14 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 from django.views.generic import TemplateView
 
-from common_segments.views import IndexView, AboutView, ContactsView, PrivacyPolicyView
-from common_segments.sitemaps import (
-    StaticPagesSitemap,
-    ArticleSitemap,
-    TarotCardSitemap,
-    SuitDescriptionSitemap,
-    ColorCharacterSitemap,
-    BirthdayDescriptionSitemap,
-    MonthDayDescriptionSitemap,
-)
+from common_segments.sitemaps import (ArticleSitemap,
+                                      BirthdayDescriptionSitemap,
+                                      ColorCharacterSitemap,
+                                      MonthDayDescriptionSitemap,
+                                      StaticPagesSitemap,
+                                      SuitDescriptionSitemap, TarotCardSitemap)
+from common_segments.views import (AboutView, ContactsView, IndexView,
+                                   PrivacyPolicyView)
 
 sitemaps = {
     'static': StaticPagesSitemap,

@@ -29,12 +29,12 @@ env = environ.Env(
     DATABASE_HOST=str,
     DATABASE_PORT=str,
 
-    EMAIL_BACKEND=str,
-    EMAIL_HOST=str,
-    EMAIL_PORT=int,
-    EMAIL_USE_TLS=bool,
-    EMAIL_HOST_USER=str,
-    EMAIL_HOST_PASSWORD=str,
+    # EMAIL_BACKEND=str,
+    # EMAIL_HOST=str,
+    # EMAIL_PORT=int,
+    # EMAIL_USE_TLS=bool,
+    # EMAIL_HOST_USER=str,
+    # EMAIL_HOST_PASSWORD=str,
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -213,6 +213,5 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 # Celery
-CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}'
-CELERY_RESULT_BACKEND = f'redis://{REDIS_HOST}:{REDIS_PORT}'
-
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'

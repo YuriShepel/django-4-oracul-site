@@ -18,10 +18,10 @@ class QuoteAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'url')
+    list_display = ('name', 'url', 'image_alt')
 
     fieldsets = (
         ('Основные параметры', {
-            'fields': ('name', 'url', 'image'), 'classes': ['wide']
+            'fields': ('name', 'url', 'image', 'image_alt'), 'classes': ['wide']
         }),
     )

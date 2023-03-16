@@ -59,12 +59,11 @@
             <div class="col-4 justify-content-center major-arcana">
                 <div class="card text-center mb-3">
                     <div class="card-image">
-                        <a href="
-                    {% url 'tarot_devinations:three_tarot_cards' %}">
+                        <a href="{% url 'tarot_devinations:three_tarot_cards' %}">
                             <img
-                                    src=" {% static 'images/revers_three_cards.png' %} "
+                                    src="{% static 'images/revers_three_cards.png' %}"
                                     class="card-img-top mx-auto d-block text-center"
-                                    alt="Карта таро"
+                                    alt="Синий реверс карты таро"
                             />
                         </a>
                     </div>
@@ -82,8 +81,8 @@
             <div class="col-4 pt-3 pb-3">
                 <div class="image-block">
                     <img
-                            src="{% static 'images/thre_tarot_cards.jpg' %}"
-                            alt="Girl with Tarot card"
+                            src="{% static 'images/three_tarot_cards.jpg' %}"
+                            alt="Три синие карты таро"
                     />
                 </div>
             </div>

@@ -1,7 +1,8 @@
 from django.contrib.sitemaps import Sitemap
 
 from articles.models import Article
-from person_characteristic.models import ColorCharacter, WeekDayCharacter, MonthDayCharacter
+from person_characteristic.models import (ColorCharacter, MonthDayCharacter,
+                                          WeekDayCharacter)
 from tarot_cards.models import Card, TarotSuits
 
 

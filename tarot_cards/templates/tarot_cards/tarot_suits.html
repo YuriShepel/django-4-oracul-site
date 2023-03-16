@@ -33,7 +33,7 @@
                     <div class="card-image">
                         <a href="{{ major_arcana.url }}">
                             <img
-                                    src=" {{ major_arcana.image_4.url }} "
+                                    src="{{ major_arcana.image_4.url }}"
                                     class="card-img-top mx-auto d-block text-center"
                                     alt="Major Arcana"
                             />
@@ -59,7 +59,7 @@
                             ><img
                                     src="{{ suit.image_4.url }}"
                                     class="card-img-top"
-                                    alt="Cups"
+                                    alt="{{ suit.suits_name }}"
                             /></a>
                         </div>
                         <div class="card-body">
@@ -79,7 +79,7 @@
                 <div class="image-block">
                     <img
                             src="{% static 'images/d_d_tarot_guide_comp_w_760px.jpg' %}"
-                            alt="Джонни Депп с картой"
+                            alt="Джонни Депп в стиле стимпанк с картой"
                     />
                 </div>
             </div>

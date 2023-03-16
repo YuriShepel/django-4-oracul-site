@@ -58,34 +58,33 @@
             <div class="col-4 justify-content-center major-arcana">
                 <div class="card text-center mb-3">
                     <div class="card-image">
-                    <a href="
-                    {% url 'tarot_devinations:card_of_the_day' %}">
-                    <img
-                            src=" {% static 'images/revers_day_card.jpg' %} "
-                            class="card-img-top mx-auto d-block text-center"
-                            alt="Major Arcana"
-                    />
-                    </a>
-                </div>
-                <div class="card-body">
-                    <a href="{% url 'tarot_devinations:card_of_the_day' %}" class="btn btn-primary card-button"
-                    >Нажмите на карту</a
-                    >
+                        <a href="{% url 'tarot_devinations:card_of_the_day' %}">
+                            <img
+                                    src="{% static 'images/revers_day_card.jpg' %}"
+                                    class="card-img-top mx-auto d-block text-center"
+                                    alt="Реверс карты таро"
+                            />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'tarot_devinations:card_of_the_day' %}" class="btn btn-primary card-button"
+                        >Нажмите на карту</a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
+        <hr>
 
-    <div class="row justify-content-center bottom-block">
-        <div class="col-4 pt-3 pb-3">
-            <div class="image-block">
-                <img
-                        src="{% static 'images/day_card_first_page.jpg' %}"
-                        alt="Girl with Tarot card"
-                />
+        <div class="row justify-content-center bottom-block">
+            <div class="col-4 pt-3 pb-3">
+                <div class="image-block">
+                    <img
+                            src="{% static 'images/day_card_first_page.jpg' %}"
+                            alt="Девушка с картой таро в стиле стимпанк"
+                    />
+                </div>
             </div>
         </div>
-    </div>
     </div>
 {% endblock %}

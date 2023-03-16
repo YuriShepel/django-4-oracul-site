@@ -54,12 +54,11 @@
             <div class="col-4 justify-content-center major-arcana">
                 <div class="card text-center mb-3">
                     <div class="card-image">
-                        <a href="
-                    {% url 'tarot_devinations:finance_situation_tarot' %}">
+                        <a href="{% url 'tarot_devinations:finance_situation_tarot' %}">
                             <img
-                                    src=" {% static 'images/revers_finance_situation.jpg' %} "
+                                    src="{% static 'images/revers_finance_situation.jpg' %}"
                                     class="card-img-top mx-auto d-block text-center"
-                                    alt="Major Arcana"
+                                    alt="Девушка с денежной купюрой"
                             />
                         </a>
                     </div>
@@ -79,7 +78,7 @@
                 <div class="image-block">
                     <img
                             src="{% static 'images/common_finance_situation.jpg' %}"
-                            alt="Woman with money"
+                            alt="Девушка на фоне денежной купюры"
                     />
                 </div>
             </div>

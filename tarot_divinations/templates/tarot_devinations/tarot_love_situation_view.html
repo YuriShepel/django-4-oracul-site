@@ -53,12 +53,11 @@
             <div class="col-4 justify-content-center major-arcana">
                 <div class="card text-center mb-3">
                     <div class="card-image">
-                        <a href="
-                    {% url 'tarot_devinations:love_situation_tarot' %}">
+                        <a href="{% url 'tarot_devinations:love_situation_tarot' %}">
                             <img
-                                    src=" {% static 'images/revers_love_situation.jpg' %} "
+                                    src="{% static 'images/revers_love_situation.jpg' %}"
                                     class="card-img-top mx-auto d-block text-center"
-                                    alt="Major Arcana"
+                                    alt="Джонни Депп в синем костюме в стиле стимпанк"
                             />
                         </a>
                     </div>
@@ -77,7 +76,7 @@
                 <div class="image-block">
                     <img
                             src="{% static 'images/common_love_situation.jpg' %}"
-                            alt="Man and Women"
+                            alt="Мужчина и две девушки"
                     />
                 </div>
             </div>

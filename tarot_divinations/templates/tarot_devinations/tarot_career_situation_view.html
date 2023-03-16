@@ -3,7 +3,7 @@
 
 {% block seo %}
     <meta name="description"
-          content="Получите предсказания относительно вашей текущей ситуации на работе и возможных действий для достижения успеха с помощью нашего онлайн гадания на картах Таро. Задайте вопрос и выберите карты Таро, чтобы получить свой результат.."/>
+          content="Получите предсказания относительно вашей текущей ситуации на работе и возможных действий для достижения успеха с помощью нашего онлайн гадания на картах Таро. Задайте вопрос и выберите карты Таро, чтобы получить свой результат."/>
     <meta
             name="keywords"
             content="Таро, Гадание, Ситуация на работе, Работа, Онлайн гадание"/>
@@ -55,12 +55,11 @@
             <div class="col-4 justify-content-center major-arcana">
                 <div class="card text-center mb-3">
                     <div class="card-image">
-                        <a href="
-                    {% url 'tarot_devinations:career_situation_tarot' %}">
+                        <a href="{% url 'tarot_devinations:career_situation_tarot' %}">
                             <img
-                                    src=" {% static 'images/revers_career_situation.jpg' %} "
+                                    src="{% static 'images/revers_career_situation.jpg' %}"
                                     class="card-img-top mx-auto d-block text-center"
-                                    alt="Major Arcana"
+                                    alt="Девушка сидит перед ноутбуком"
                             />
                         </a>
                     </div>
@@ -79,7 +78,7 @@
                 <div class="image-block">
                     <img
                             src="{% static 'images/common_career_situation.jpg' %}"
-                            alt="Man and Women"
+                            alt="Три синие карты таро"
                     />
                 </div>
             </div>

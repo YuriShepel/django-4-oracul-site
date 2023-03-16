@@ -33,4 +33,3 @@ class MonthDayCharacter(BaseCharacter):
     class Meta:
         verbose_name = 'День месяца'
         verbose_name_plural = 'Дни месяца'
-

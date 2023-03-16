@@ -1,7 +1,6 @@
 import locale
 from datetime import datetime
 
-from django.shortcuts import render
 from django.views.generic import DetailView, ListView, TemplateView
 
 from common_segments.common.mixins import TitleMixin

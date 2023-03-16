@@ -51,12 +51,11 @@
             <div class="col-4 justify-content-center major-arcana">
                 <div class="card text-center mb-3">
                     <div class="card-image">
-                        <a href="
-                    {% url 'tarot_devinations:yes_or_no_tarot' %}">
+                        <a href="{% url 'tarot_devinations:yes_or_no_tarot' %}">
                             <img
-                                    src=" {% static 'images/revers_yes_or_no.jpg' %} "
+                                    src="{% static 'images/revers_yes_or_no.jpg' %}"
                                     class="card-img-top mx-auto d-block text-center"
-                                    alt="Major Arcana"
+                                    alt="Реверс карты таро"
                             />
                         </a>
                     </div>
@@ -75,7 +74,7 @@
                 <div class="image-block">
                     <img
                             src="{% static 'images/yes_or_no_img.jpg' %}"
-                            alt="Girl with Tarot card"
+                            alt="Девушка маг в синем одеянии"
                     />
                 </div>
             </div>

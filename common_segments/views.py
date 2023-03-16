@@ -1,7 +1,9 @@
+from django.conf import settings
+from django.core.mail import send_mail
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
-from django.core.mail import send_mail
-from django.conf import settings
+
+# from common_segments.tasks import send_feedback_email
 from common_segments.common.mixins import TitleMixin
 from common_segments.forms import FeedbackForm
 from common_segments.models import Feedback
