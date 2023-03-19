@@ -41,7 +41,7 @@ ___
 ![](https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/postgresql/postgresql-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/redis/redis-ar21.svg)
-![](https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_8a31c306355eb532650043bf039d70a7/python-celery.png)
+
 ![](https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg)
 ![](https://www.vectorlogo.zone/logos/netlifyapp_watercss/netlifyapp_watercss-ar21.svg)
