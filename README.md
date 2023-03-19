@@ -3,6 +3,8 @@
 ___
 This is my first **web project** after studying Python and Django. 
 
+(upd) Site was deployed on 18.03.2023. Address: https://www.magiclair.pp.ua
+
 This is a **Django web application** dedicated to fortune-telling and Tarot cards. The website includes a Tarot card reference guide with descriptions of each card, various types of readings, and articles about esotericism, Tarot, and divination.
 
 ![Main Page](/static/images/for_readme/Index.png)
