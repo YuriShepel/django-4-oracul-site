@@ -1,5 +1,4 @@
-import locale
-from datetime import datetime
+import calendar
 
 from django.views.generic import DetailView, ListView, TemplateView
 
@@ -30,7 +29,7 @@ class ColorDescriptionDetailView(DetailView):
     slug_field = 'url'
 
 
-class WeekDayDescriptionView(TitleMixin, TemplateView):
+class WeekDayDescriptionView(TemplateView):
     template_name = 'person_characteristic/week_day_description_view.html'
     title = 'Описание человека по дню рождения'
 
@@ -44,10 +43,18 @@ class WeekDayDescriptionView(TitleMixin, TemplateView):
         form = BirthdayForm(request.POST)
         if form.is_valid():
             birthday = form.cleaned_data['birthday']
-            locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
-            day_of_week = datetime.strftime(birthday, '%A')
+            english_day_of_week = calendar.day_name[birthday.weekday()]
+            russian_day_of_week = {
+                'Monday': 'Понедельник',
+                'Tuesday': 'Вторник',
+                'Wednesday': 'Среда',
+                'Thursday': 'Четверг',
+                'Friday': 'Пятница',
+                'Saturday': 'Суббота',
+                'Sunday': 'Воскресенье'
+            }[english_day_of_week]
             days = WeekDayCharacter.objects.all().order_by('id')
-            return self.render_to_response({'day_of_week': day_of_week, 'days': days, 'form': form})
+            return self.render_to_response({'day_of_week': russian_day_of_week, 'days': days, 'form': form})
         else:
             return self.render_to_response({'form': form})
 

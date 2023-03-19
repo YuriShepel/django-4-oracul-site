@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
-# from common_segments.tasks import send_feedback_email
+from common_segments.tasks import send_feedback_email
 from common_segments.common.mixins import TitleMixin
 from common_segments.forms import FeedbackForm
 from common_segments.models import Feedback
@@ -39,13 +39,14 @@ class ContactsView(TitleMixin, TemplateView):
             message = form.cleaned_data['message']
             feedback = Feedback(name=name, email=email, message=message)
             feedback.save()
-            send_mail(
-                f'Новый отзыв на сайте от {name} | {email}',
-                message,
-                email,
-                [settings.EMAIL_HOST_USER],
-                fail_silently=False,
-            )
+            send_feedback_email.delay(name, email, message)
+            # send_mail(
+            #     f'Новый отзыв на сайте от {name} | {email}',
+            #     message,
+            #     email,
+            #     [settings.EMAIL_HOST_USER],
+            #     fail_silently=False,
+            # )
             return redirect('index')  # перенаправление на главную страницу
         else:
             context = self.get_context_data(form=form)
