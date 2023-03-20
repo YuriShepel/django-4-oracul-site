@@ -10,9 +10,9 @@
 {% endblock %} {% block title %}
     <title>{{ title }}</title>
 {% endblock %} {% block content %}
-    <div class="content-block col-lg-8 col-md-12">
+    <div class="content-block col-lg-8 col-md-12" id="contacts-view">
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-8">
                 <div class="image-block">
                     <img
                             class="title-image"
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="row mt-2">
-            <div class="col-5">
+            <div class="col-lg-5 col-md-7 col-sm-12 col-12">
                 <form method="post">
                     {% csrf_token %}
                     <div class="mb-3">

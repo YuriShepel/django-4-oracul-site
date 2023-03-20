@@ -15,7 +15,7 @@
 
 {% block content %}
     <!-- central content block -->
-    <div class="content-block col-lg-8 col-md-12">
+    <div class="content-block col-lg-8 col-md-12" id="month-day-description-view">
         <div class="row proposition-text">
             <div class="col">
                 <div class="text-center mb-4">
@@ -53,9 +53,9 @@
 
         <div class="row justify-content-center text-center">
             {% for day in day_numbers %}
-                <div class="col-lg-1 col-md-6 color-container mb-4">
+                <div class="col-xxl-1 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3 color-container mb-4">
                     <div class="color-block ">
-                        <a href="{% url 'person_characteristic:month_day_detail' day.url %}">
+                        <a href="{% url 'person_characteristic:month_day_detail' day.url %}#month-day-description-detail">
                             <div class="d-flex align-items-center justify-content-center color-block"
                                  style="background-color: {{ day.color_code }};">
                                 <p style="color: black">{{ day.name }}</p>
@@ -71,7 +71,7 @@
         <hr>
         <div class="row justify-content-center bottom-block">
 
-            <div class="col-4 pt-3 pb-3">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-8 pt-3 pb-3">
 
                 <div class="image-block">
                     <img

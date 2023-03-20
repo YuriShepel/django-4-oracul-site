@@ -14,9 +14,9 @@
 
 {% block content %}
     <!-- central content block -->
-    <div class="content-block col-lg-8 col-md-12">
+    <div class="content-block col-lg-8 col-md-12" id="taro-suit-detail">
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-8 pt-3 pb-3">
                 <div class="image-block text-center">
                     <a href="{% url 'tarot_cards:cards_list' suit.url %}">
                         <img
@@ -33,7 +33,7 @@
         <div class="row mb-2 mt-2 justify-content-center">
             <div class="col-4 suits-info-text">
                 <div class="text-center mb-4 mt-4">
-                    <a href="{% url 'tarot_cards:cards_list' suit.url %}">
+                    <a href="{% url 'tarot_cards:cards_list' suit.url %}#taro-list-view">
                         <p>{{ suit.suits_name }}</p>
                     </a>
                 </div>
@@ -92,7 +92,7 @@
         </div>
 
         <div class="row justify-content-center bottom-image">
-            <div class="col-4 pb-1 pt-1">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-8 pt-3 pb-3">
                 <div class="image-block text-center">
                     <img
                             src="{{ suit.image_3.url }}"

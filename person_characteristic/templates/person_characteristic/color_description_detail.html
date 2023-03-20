@@ -15,7 +15,7 @@
 
 {% block content %}
     <!-- central content block -->
-    <div class="content-block col-lg-8 col-md-12">
+    <div class="content-block col-lg-8 col-md-12" id="color-description-detail">
         <div class="row proposition-text">
             <div class="col">
                 <div class="text-center mb-4">
@@ -39,9 +39,9 @@
         </div>
 
         <div class="row mb-2 mt-2 justify-content-center">
-            <div class="col-4 suits-info-text">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-9 col-9 suits-info-text">
                 <div class="text-center mb-4 mt-4">
-                    <a href="{% url 'person_characteristic:color_description' %}"><p>Назад</p></a>
+                    <a href="{% url 'person_characteristic:color_description' %}#color-description-view"><p>Назад</p></a>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
         <hr>
 
         <div class="row justify-content-center bottom-block">
-            <div class="col-4 pt-3 pb-3">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-8 pt-3 pb-3">
                 <div class="image-block">
                     <img
                             src="{% static 'images/common_color.jpg' %}"

@@ -15,9 +15,9 @@
 
 {% block content %}
     <!-- central content block -->
-    <div class="content-block col-lg-8 col-md-12">
+    <div class="content-block col-lg-8 col-md-12" id="articles-view">
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-8 pt-3 pb-3">
                 <div class="image-block text-center">
                     <img
                             class="title-image"
@@ -29,7 +29,7 @@
         </div>
 
         <div class="row mb-2 mt-2 justify-content-center">
-            <div class="col-4 suits-info-text">
+            <div class="col-xxl-4 col-lg-4 col-md-4 col-sm-7 col-8 suits-info-text">
                 <div class="text-center mb-4 mt-4">
 
                     <p>Интересные статьи</p>
@@ -41,7 +41,7 @@
         <div class="row ">
             <div class="col mt-4 justify-content-center article">
                 {% for article in article_list %}
-                    <a href="{% url 'articles:article_detail' article.url %}" class="article-title">
+                    <a href="{% url 'articles:article_detail' article.url %}#article-detail" class="article-title">
                         <h1>{{ article.title }}</h1>
                     </a>
                     <p class="mt-2">
@@ -89,7 +89,7 @@
 
 
         <div class="row justify-content-center bottom-image">
-            <div class="col-4 pb-1 pt-1">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-11 pt-3 pb-3">
                 <div class="image-block text-center">
                     <img
                             src="{% static 'images/image_for_articles_2.jpg' %}"

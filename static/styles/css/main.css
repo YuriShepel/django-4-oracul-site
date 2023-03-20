@@ -55,7 +55,7 @@ body {
     height: 50px;
     background: linear-gradient(360deg, #030631 0%, #4c5af5 100%);
     border-radius: 5px 5px 0px 0px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 20px;
     color: aqua;
     padding-left: 15px;
@@ -75,7 +75,7 @@ body {
 }
 
 .main-section .left-navbar .menu li a {
-    font-size: 17px;
+    font-size: 0.85em;
     color: aquamarine;
     line-height: 5px;
 }
@@ -169,15 +169,13 @@ footer {
 .major-arcana,
 .minor-arcana {
     display: flex;
-}
 
-.minor-arcana-row {
-    padding-left: 90px;
-    padding-right: 90px;
-
-    border-top: 1px solid aqua;
-    border-bottom: 1px solid aqua;
 }
+/*.minor-arcana-row {*/
+
+/*    border-top: 1px solid aqua;*/
+/*    border-bottom: 1px solid aqua;*/
+/*}*/
 
 .card {
     background: linear-gradient(270deg, #00009c 0%, #000000 100%);
@@ -348,4 +346,10 @@ table .tag-text {
 .color-block {
     width: 100%;
     height: 100%
+}
+
+@media (max-width: 768px) {
+  .content-block p {
+    font-size: 16px;
+  }
 }

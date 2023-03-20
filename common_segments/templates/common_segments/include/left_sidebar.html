@@ -1,41 +1,42 @@
 {% load suits_tag %}
 
-<div class="left-navbar col-lg-2 col-md-12">
+<div class="left-navbar col-lg-2 col-md-12 mb-4">
     <a href="#">
         <h4 class="d-flex align-items-center">Гадания онлайн</h4>
     </a>
     <nav class="menu">
         <ul>
             <li>
-                <a href="{% url 'tarot_devinations:tarot_day_card_view' %}">Карта дня</a>
+                <a href="{% url 'tarot_devinations:tarot_day_card_view' %}#taro-day-card-view">Карта дня</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'tarot_devinations:love_situation_tarot_view' %}">Cитуация в любви</a>
+                <a href="{% url 'tarot_devinations:love_situation_tarot_view' %}#taro-love-card-view">Cитуация в любви</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'tarot_devinations:career_situation_tarot_view' %}">Cитуация на работе</a>
+                <a href="{% url 'tarot_devinations:career_situation_tarot_view' %}#taro-career-card-view">Cитуация на работе</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'tarot_devinations:finance_situation_tarot_view' %}">Cитуация с деньгами</a>
+                <a href="{% url 'tarot_devinations:finance_situation_tarot_view' %}#taro-finance-card-view">Cитуация с деньгами</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'tarot_devinations:yes_or_no_tarot_view' %}">Да или нет</a>
+                <a href="{% url 'tarot_devinations:yes_or_no_tarot_view' %}#taro-yes-no-card-view">Да или нет</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'tarot_devinations:tarot_three_cards_view' %}">Прошлое, настоящее, будущее</a>
+                <a href="{% url 'tarot_devinations:tarot_three_cards_view' %}#taro-three-cards-view">Прошлое, настоящее, будущее</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'quotes_divination:category_quotes_list' %}">Гадание по цитатам</a>
+                <a href="{% url 'quotes_divination:category_quotes_list' %}#quotes-divinations-view">Гадание по цитатам</a>
             </li>
 
         </ul>
     </nav>
+
 
     <a href="#">
         <h4 class="d-flex align-items-center">Тайна человека</h4>
@@ -43,20 +44,20 @@
     <nav class="menu">
         <ul>
             <li>
-                <a href="{% url 'person_characteristic:color_description' %}">Описание по любимому цвету</a>
+                <a href="{% url 'person_characteristic:color_description' %}#color-description-view">Описание по любимому цвету</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'person_characteristic:birthday' %}">Описание по дню рождения</a>
+                <a href="{% url 'person_characteristic:birthday' %}#week-day-description-view">Описание по дню рождения</a>
             </li>
             <hr>
             <li>
-                <a href="{% url 'person_characteristic:month_day_description' %}">Описание по числу рождения</a>
+                <a href="{% url 'person_characteristic:month_day_description' %}#month-day-description-view">Описание по числу рождения</a>
             </li>
         </ul>
     </nav>
 
-    <a href="{% url 'tarot_cards:tarot_suits' %}">
+    <a href="{% url 'tarot_cards:tarot_suits' %}#taro-suits-view">
         <h4 class="d-flex align-items-center">Справочник таро</h4>
     </a>
     <nav class="menu">
@@ -64,7 +65,7 @@
             {% get_suits as suits %}
             {% for suit in suits %}
                 <li>
-                    <a href="{% url 'tarot_cards:cards_list' suit.url %} "> {{ suit.suits_name }} </a>
+                    <a href="{% url 'tarot_cards:cards_list' suit.url %}#taro-list-view"> {{ suit.suits_name }} </a>
                 </li>
             {% endfor %}
         </ul>
