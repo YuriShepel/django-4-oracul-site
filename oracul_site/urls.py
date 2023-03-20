@@ -26,7 +26,7 @@ from common_segments.sitemaps import (ArticleSitemap,
                                       MonthDayDescriptionSitemap,
                                       StaticPagesSitemap,
                                       SuitDescriptionSitemap, TarotCardSitemap)
-from common_segments.views import (AboutView, ContactsView, IndexView,
+from common_segments.views import (AboutView, ContactsView, MessageSuccessView, IndexView,
                                    PrivacyPolicyView)
 
 sitemaps = {
@@ -43,8 +43,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('about/', AboutView.as_view(), name='about'),
-    path('contacts/', ContactsView.as_view(), name='contacts'),
     path('privacy_policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
+    path('contacts/', ContactsView.as_view(), name='contacts'),
+    path('message_success/', MessageSuccessView.as_view(), name='message_success'),
 
     path('tarot_cards/', include('tarot_cards.urls', namespace='tarot_cards')),
     path('articles/', include('articles.urls', namespace='articles')),

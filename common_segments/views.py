@@ -40,17 +40,16 @@ class ContactsView(TitleMixin, TemplateView):
             feedback = Feedback(name=name, email=email, message=message)
             feedback.save()
             send_feedback_email.delay(name, email, message)
-            # send_mail(
-            #     f'Новый отзыв на сайте от {name} | {email}',
-            #     message,
-            #     email,
-            #     [settings.EMAIL_HOST_USER],
-            #     fail_silently=False,
-            # )
-            return redirect('index')  # перенаправление на главную страницу
+            return redirect('message_success')  # перенаправление на главную страницу
         else:
             context = self.get_context_data(form=form)
             return self.render_to_response(context)
+
+
+class MessageSuccessView(TitleMixin, TemplateView):
+    """Displaying the about page of the site"""
+    template_name = 'common_segments/message_success.html'
+    title = 'Сообщение отправлено'
 
 
 class PrivacyPolicyView(TitleMixin, TemplateView):

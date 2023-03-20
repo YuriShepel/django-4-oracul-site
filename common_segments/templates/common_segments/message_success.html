@@ -1,0 +1,56 @@
+{% extends 'common_segments/base.html' %} {% load static %} {% block seo %}
+    <meta
+            name="description"
+            content=""
+    />
+    <meta
+            name="keywords"
+            content=""
+    />
+{% endblock %} {% block title %}
+    <title>{{ title }}</title>
+{% endblock %} {% block content %}
+    <div class="content-block col-lg-8 col-md-12" id="message-success-view">
+        <div class="row justify-content-center">
+            <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-7 col-8">
+                <div class="image-block">
+                    <img
+                            class="title-image"
+                            src="{% static 'images/email_sent.jpg' %}"
+                            class="rounded"
+                            alt="Почтовые конверты в синих тонах"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="title-text text-center title-block">
+                    <h1 class="mb-2" style="color: white; font-size: 25px">
+                        Сообщение успешно отправлено. Спасибо!
+                    </h1>
+                    <p class="mt-5">Вы будете перенаправлены на главную страницу через <span id="countdown">5</span> секунды.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var countdown = 5; // количество секунд до перенаправления
+        var timer = setInterval(function () {
+            countdown--;
+            document.getElementById("countdown").textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = "{% url 'index' %}#index-view";
+            }
+        }, 1000);
+    </script>
+
+
+
+
+{% endblock %}
+
