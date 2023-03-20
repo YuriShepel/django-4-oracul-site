@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import redirect
+from django.urls import reverse
 from django.views.generic import TemplateView
 
 from common_segments.tasks import send_feedback_email
@@ -40,7 +41,8 @@ class ContactsView(TitleMixin, TemplateView):
             feedback = Feedback(name=name, email=email, message=message)
             feedback.save()
             send_feedback_email.delay(name, email, message)
-            return redirect('message_success')  # перенаправление на главную страницу
+            url = reverse('message_success') + '#message-success-view'
+            return redirect(url)
         else:
             context = self.get_context_data(form=form)
             return self.render_to_response(context)
