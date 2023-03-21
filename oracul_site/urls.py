@@ -43,18 +43,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('about/', AboutView.as_view(), name='about'),
-    path('privacy_policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
+    path('privacy-policy/', PrivacyPolicyView.as_view(), name='privacy_policy'),
     path('contacts/', ContactsView.as_view(), name='contacts'),
-    path('message_success/', MessageSuccessView.as_view(), name='message_success'),
+    path('message-success/', MessageSuccessView.as_view(), name='message_success'),
 
-    path('tarot_cards/', include('tarot_cards.urls', namespace='tarot_cards')),
+    path('tarot-cards/', include('tarot_cards.urls', namespace='tarot_cards')),
     path('articles/', include('articles.urls', namespace='articles')),
-    path('tarot_divinations/', include('tarot_divinations.urls', namespace='tarot_divinations')),
-    path('quotes_divination/', include('quotes_divination.urls', namespace='quotes_divination')),
+    path('tarot-divinations/', include('tarot_divinations.urls', namespace='tarot_divinations')),
+    path('quotes-divination/', include('quotes_divination.urls', namespace='quotes_divination')),
     path('person/', include('person_characteristic.urls', namespace='person_characteristic')),
 
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('sitemap.xml/', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt/', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 

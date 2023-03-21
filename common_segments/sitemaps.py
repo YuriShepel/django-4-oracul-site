@@ -17,20 +17,20 @@ class StaticPagesSitemap(BaseStaticSitemap):
         'index': '/',
         'about': '/about/',
         'contacts': '/contacts/',
-        'privacy_policy': '/privacy_policy/',
-        'tarot_day_card_view': '/tarot_divinations/card_of_the_day_divination/',
-        'love_situation_tarot_view': '/tarot_divinations/love_situation_tarot_divination/',
-        'career_situation_tarot_view': '/tarot_divinations/career_situation_tarot_divination/',
-        'finance_situation_tarot_view': '/tarot_divinations/finance_situation_tarot_divination/',
-        'yes_or_no_tarot_view': '/tarot_divinations/yes_or_no_tarot_divination/',
-        'tarot_three_cards_view': '/tarot_divinations/three_tarot_cards_divination/',
-        'category_quotes_list': '/quotes_divination/',
+        'privacy_policy': '/privacy-policy/',
+        'tarot_day_card_view': '/tarot-divinations/card-of-the-day-divination/',
+        'love_situation_tarot_view': '/tarot-divinations/love-situation-tarot-divination/',
+        'career_situation_tarot_view': '/tarot-divinations/career-situation-tarot-divination/',
+        'finance_situation_tarot_view': '/tarot-divinations/finance-situation-tarot-divination/',
+        'yes_or_no_tarot_view': '/tarot-divinations/yes-or-no-tarot-divination/',
+        'tarot_three_cards_view': '/tarot-divinations/three-tarot-cards-divination/',
+        'category_quotes_list': '/quotes-divination/',
 
-        'color_description': '/person/color_description/',
-        'birthday': '/person/birthday_description/',
-        'month_day_description': '/person/month_day_description/',
+        'color_description': '/person/color-description/',
+        'birthday': '/person/birthday-description/',
+        'month_day_description': '/person/month-day-description/',
 
-        'tarot_suits': '/tarot_cards/tarot_suits/',
+        'tarot_suits': '/tarot-cards/tarot-suits/',
     }
 
     def items(self):
@@ -58,7 +58,7 @@ class SuitDescriptionSitemap(BaseStaticSitemap):
         return TarotSuits.objects.all()
 
     def location(self, obj):
-        return f'/tarot_cards/suit_description/{obj.url}/'
+        return f'/tarot-cards/suit-description/{obj.url}/'
 
 
 class TarotCardSitemap(BaseStaticSitemap):
@@ -67,7 +67,7 @@ class TarotCardSitemap(BaseStaticSitemap):
         return Card.objects.all()
 
     def location(self, obj):
-        return f'/tarot_cards/{obj.url}/'
+        return f'/tarot-cards/{obj.url}/'
 
 
 class ColorCharacterSitemap(BaseStaticSitemap):
@@ -76,7 +76,7 @@ class ColorCharacterSitemap(BaseStaticSitemap):
         return ColorCharacter.objects.all()
 
     def location(self, obj):
-        return f'/person/color_description/{obj.url}/'
+        return f'/person/color-description/{obj.url}/'
 
 
 class BirthdayDescriptionSitemap(BaseStaticSitemap):
@@ -85,7 +85,7 @@ class BirthdayDescriptionSitemap(BaseStaticSitemap):
         return WeekDayCharacter.objects.all()
 
     def location(self, obj):
-        return f'/person/birthday_description/{obj.url}/'
+        return f'/person/birthday-description/{obj.url}/'
 
 
 class MonthDayDescriptionSitemap(BaseStaticSitemap):
@@ -94,4 +94,4 @@ class MonthDayDescriptionSitemap(BaseStaticSitemap):
         return MonthDayCharacter.objects.all()
 
     def location(self, obj):
-        return f'/person/month_day_description/{obj.url}/'
+        return f'/person/month-day-description/{obj.url}/'
