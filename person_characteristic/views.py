@@ -29,7 +29,7 @@ class ColorDescriptionDetailView(DetailView):
     slug_field = 'url'
 
 
-class WeekDayDescriptionView(TemplateView):
+class WeekDayDescriptionView(TitleMixin, TemplateView):
     template_name = 'person_characteristic/week_day_description_view.html'
     title = 'Описание человека по дню рождения'
 
