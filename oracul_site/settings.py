@@ -97,6 +97,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'common_segments.middleware.SitemapMiddleware',
+    'common_segments.middleware.URLMiddleware',
 
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]

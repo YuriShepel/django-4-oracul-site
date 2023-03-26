@@ -34,7 +34,7 @@
             <div class="col-4 suits-info-text">
                 <div class="text-center mb-4 mt-4">
                     <a href="{% url 'tarot_cards:cards_list' suit.url %}#taro-list-view">
-                        <h1>{{ suit.suits_name }}</h1>
+                        <p>{{ suit.suits_name }}</p>
                     </a>
                 </div>
             </div>
@@ -42,6 +42,7 @@
 
         <div class="row text-information">
             <div class="col mt-4 justify-content-center">
+                <h1 class="article-title">Общее описание мастей таро {{ suit.suits_name }}</h1>
                 <p>
                     {{ suit.description }}
                 </p>

@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: https://magiclair.pp.ua/sitemap.xml
+Sitemap: https://magiclair.pp.ua/sitemap.xml/
 Disallow: /admin/
 Disallow: /static/
 Disallow: /media/
