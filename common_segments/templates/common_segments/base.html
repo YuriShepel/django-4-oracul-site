@@ -1,8 +1,20 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9V7WRMPM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-2E9V7WRMPM');
+    </script>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,20 +29,6 @@
     {% block title %} {% endblock %}
 
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9V7WRMPM"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-2E9V7WRMPM');
-</script>
-
 <body>
 
 <header>
@@ -46,6 +44,9 @@
 
             {% include 'common_segments/include/right-sidebar.html' %}
         </div>
+        <div>
+            <button class="scroll-to-top" title=""></button>
+        </div>
     </div>
 </section>
 
@@ -53,14 +54,8 @@
     {% include 'common_segments/include/footer.html' %}
 </footer>
 
-<script
-        src="{% static 'styles/bootstrap/js/bootstrap.min.js' %}"
-></script>
-
-{#Adding scroll to top arrow#}
-<div class="arrow-scroll">
-    {% include 'common_segments/include/scroll_to_top.html' %}
-</div>
+<script src="{% static 'styles/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'styles/js/scripts.js' %}"></script>
 
 </body>
 </html>

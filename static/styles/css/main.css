@@ -353,3 +353,21 @@ table .tag-text {
     font-size: 16px;
   }
 }
+
+/*scroll_to_top_button*/
+.scroll-to-top {
+    display: none;
+    width: 70px;
+    height: 70px;
+    background: url('/static/files/arrow_to_top.png') no-repeat center center;
+    background-size: cover;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    transition: transform 0.4s;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+}
