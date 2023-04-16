@@ -21,6 +21,17 @@ class URLMiddleware:
         if "/person/month_day_description/" in path:
             new_path = path.replace("month_day_description", "month-day-description")
             return redirect(new_path)
-
+        if "/robots.txt/" in path:
+            new_path = path.replace("robots.txt/", "robots.txt")
+            return redirect(new_path)
+        if "/privacy_policy/" in path:
+            new_path = path.replace("privacy_policy", "privacy-policy")
+            return redirect(new_path)
+        if "/tarot_divinations/love_situation_tarot_divination/" in path:
+            new_path = path.replace("/tarot_divinations/love_situation_tarot_divination/", "/tarot-divinations/love"
+                                                                                           "-situation-tarot"
+                                                                                           "-divination/#taro-love"
+                                                                                           "-card-view")
+            return redirect(new_path)
         response = self.get_response(request)
         return response
