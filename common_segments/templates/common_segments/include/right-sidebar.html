@@ -4,7 +4,7 @@
             <div class="row px-2">
                 <div class="col-lg-12 sidebar my-4">
                     <a href="{% url 'articles:article_detail' article.url %}">
-                        <h2 class="mb-4">{{ article.title }}</h2>
+                        <h2 class="mb-4"  style="color: white;">{{ article.title }}</h2>
                     </a>
                     <p>
                         {{ article.text | safe | truncatechars:100 }}

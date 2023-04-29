@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block seo %}
+    <link rel="canonical" href="https://www.magiclair.pp.ua/articles/"/>
     <meta name="description"
           content="Интересуетесь гаданием и эзотерикой? На нашем сайте вы найдете статьи о гадании на картах Таро, нумерологии, астрологии и других методах предсказаний. Узнайте, как использовать различные техники гадания, интерпретировать результаты и применять их в своей жизни."/>
     <meta
@@ -42,11 +43,11 @@
             <div class="col mt-4 justify-content-center article">
                 {% for article in article_list %}
                     <a href="{% url 'articles:article_detail' article.url %}#article-detail" class="article-title">
-                        <h1>{{ article.title }}</h1>
+                        <h1 style="color: white;">{{ article.title }}</h1>
                     </a>
-                    <p class="mt-2">
+                    <p class="mt-1">
                         {{ article.text | safe | truncatechars:200 }}
-                        <a href="{% url 'articles:article_detail' article.url %}">Далее>>></a>
+                        <a href="{% url 'articles:article_detail' article.url %}">Далее >>></a>
                     </p>
                     <hr>
                 {% endfor %}

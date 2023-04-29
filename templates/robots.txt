@@ -3,3 +3,6 @@ Sitemap: https://magiclair.pp.ua/sitemap.xml/
 Disallow: /admin/
 Disallow: /static/
 Disallow: /media/
+Disallow: /quotes-divination/love
+Disallow: /quotes-divination/health
+Disallow: /quotes-divination/common
